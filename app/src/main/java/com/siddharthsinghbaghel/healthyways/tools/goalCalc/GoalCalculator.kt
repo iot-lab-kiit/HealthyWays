@@ -37,8 +37,10 @@ class GoalCalculator : AppCompatActivity() {
 
         btnCalculateGC.setOnClickListener {
 
-            svIw.fullScroll(ScrollView.FOCUS_DOWN);
+
+
             hideKeyboard(it)
+            svIw.fullScroll(ScrollView.FOCUS_DOWN)
 
 
             if(validateUnits()) {
@@ -57,6 +59,7 @@ class GoalCalculator : AppCompatActivity() {
     }
 
     private fun calculateGC(currentWeight: Float, targetWeight: Float, tee: Float, weeks: Int, view: View) {
+
 
 
 
