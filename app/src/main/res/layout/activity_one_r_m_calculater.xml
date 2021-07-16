@@ -1,0 +1,483 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".tools.oneRM.OneRMCalculatorActivity">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar_oneRM_activity"
+            android:layout_width="match_parent"
+            android:layout_height="?android:attr/actionBarSize"
+            android:background="#64DD17" />
+
+        <RadioGroup
+            android:id="@+id/rgUnitsRM"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/toolbar_oneRM_activity"
+            android:orientation="horizontal"
+            android:background="@drawable/radio_group_bg"
+            android:layout_margin="10dp"
+            >
+            <RadioButton
+                android:id="@+id/rdBtnMetricRM"
+                android:layout_width="0dp"
+                android:layout_height="35dp"
+                android:layout_weight="1"
+                android:background="@drawable/radio_btn_selected_bg"
+                android:text="Metric Units"
+                android:gravity="center"
+                android:checked="true"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:button="@null"
+                />
+            <!--android:button="@null" used to avoid the radio btn circle-->
+            <RadioButton
+                android:id="@+id/rdBtnUSUnitsRM"
+                android:layout_width="0dp"
+                android:layout_height="35dp"
+                android:layout_weight="1"
+                android:background="@drawable/radio_btn_selected_bg"
+                android:text="US Units"
+                android:gravity="center"
+                android:checked="false"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:button="@null" />
+            <!--android:button="@null" used to avoid the radio btn circle-->
+
+        </RadioGroup>
+
+        <LinearLayout
+            android:id="@+id/llUnitsView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/rgUnitsRM"
+            android:orientation="vertical"
+            android:padding="10dp"
+            android:visibility="visible">
+
+            <LinearLayout
+                android:id="@+id/llMetricUnitsOneRmView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                tools:visibility="visible">
+
+                <Spinner
+                    android:id="@+id/spExerciseMetric"
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp"
+                    android:entries="@array/oneRm_dropdown_exercises"
+                    />
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tilMetricUnitWeightRM"
+                    android:padding="8dp"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/etMetricUnitWeightRM"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="WEIGHT (in kg)"
+                        android:inputType="numberDecimal"
+                        android:textSize="16sp" />
+                </com.google.android.material.textfield.TextInputLayout>
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tilMetricUnitRep"
+                    android:padding="8dp"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="visible">
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/etMetricUnitRep"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Enter Repetition Count"
+                        android:inputType="number"
+                        android:textSize="16sp" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/llUsUnitsView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                tools:visibility="visible">
+
+                <Spinner
+                    android:id="@+id/spExerciseUS"
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp"
+                    android:entries="@array/oneRm_dropdown_exercises"
+                    />
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tilUsUnitWeightRM"
+                    android:padding="8dp"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="visible">
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/etUsUnitWeightRM"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="WEIGHT (in lbs)"
+                        android:inputType="numberDecimal"
+                        android:textSize="16sp" />
+                </com.google.android.material.textfield.TextInputLayout>
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tilUsUnitRep"
+                    android:padding="8dp"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="visible">
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/etUsUnitRep"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Enter Repetition Count"
+                        android:inputType="number"
+                        android:textSize="16sp" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/llDisplayBFResult"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:orientation="vertical"
+                android:visibility="visible"
+                >
+
+
+
+                <ImageView
+                    android:id="@+id/resultExerciseImage"
+                    android:layout_width="255dp"
+                    android:layout_height="255dp"
+                    android:src="@drawable/ic_calorie"
+                    android:layout_gravity="center"
+                    />
+                <TextView
+                    android:id="@+id/tvRMValue"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:textSize="26sp"
+                    android:layout_marginTop="24dp"
+                    android:textColor="#00B8D4"
+                    />
+                <TextView
+                    android:id="@+id/tvYourRM"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="YOUR ONE REP MAX (kg/lbs)"
+                    android:textStyle="bold"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/tvInfo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:gravity="center"
+                    android:textSize="12sp"
+                    android:text="Look below for more details" />
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btnCalculateUnitsRM"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_marginTop="35dp"
+                android:backgroundTint="@color/colorAccent"
+                android:text="CALCULATE"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="50dp"
+            android:elevation="20dp"
+            android:layout_below="@+id/llUnitsView"
+            app:cardCornerRadius="16dp">
+                    <LinearLayout
+                        android:id="@+id/llAdditionalInfo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:orientation="vertical"
+                        android:visibility="visible">
+
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="WHAT PERCENTAGE OF MY ONE-REP MAX SHOULD I LIFT?"
+                            android:textSize="24sp"
+                            android:textColor="@color/colorAccent"
+                            android:gravity="center"
+                            />
+
+                        <LinearLayout
+                            android:layout_marginTop="5dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="3dp"
+                            android:layout_marginRight="15dp"
+                            android:layout_marginLeft="15dp"
+                            android:gravity="center"
+                            android:background="@color/colorAccent"/>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="The answer to this question varies wildly based on your goal, your training plan's style of progressive overload, and even what phase or day of that program you're in. Totally in the dark? These are the most popular starting points for percentages and sets and reps for specific goals:"
+                            android:textSize="20sp"
+                            android:layout_marginTop="15dp"
+                            android:gravity="center"
+                            android:textColor="@color/grey_blue" />
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Speed and power: "
+                            android:textSize="20sp"
+                            android:layout_marginTop="20dp"
+                            android:textColor="@color/colorAccent"
+                            android:textStyle="bold|italic"/>
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="It is scientifically proven that for increasing speed, power and endurance of your body you have to lift 50-60% of your 1RM."
+                            android:textSize="16sp"
+                            android:gravity="center"
+                            android:layout_marginTop="8dp"
+                            android:textColor="@color/grey_blue"
+                            />
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+
+                            >
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="19sp"
+                                android:text="50-60% 1RM = "
+                                android:gravity="center"
+                                android:textColor="@color/colorAccent"/>
+                            <TextView
+                                android:id="@+id/tvSpeedRM"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                tools:text="25.18 kg/lbs"
+                                android:textColor="#0091EA"
+                                android:textStyle="bold"
+                                android:textSize="19sp"
+
+                                />
+
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+
+                            >
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="19sp"
+                                android:text="Rep Count = "
+                                android:gravity="center"
+                                android:textColor="@color/colorAccent"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="3-5/set"
+                                android:textColor="#0091EA"
+                                android:textStyle="bold"
+                                android:textSize="19sp"
+
+                                />
+
+                        </LinearLayout>
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Muscle Size: "
+                            android:textSize="20sp"
+                            android:layout_marginTop="20dp"
+                            android:textColor="@color/colorAccent"
+                            android:textStyle="bold|italic"/>
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="To stress your muscle fibres, use a weight that’s 80% of your 1RM"
+                            android:textSize="16sp"
+                            android:layout_marginTop="8dp"
+                            android:gravity="center"
+                            android:textColor="@color/grey_blue"
+                            />
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+
+                            >
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="19sp"
+                                android:text="80% 1RM = "
+                                android:gravity="center"
+                                android:textColor="@color/colorAccent"/>
+
+                            <TextView
+                                android:id="@+id/tvMuscleRM"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                tools:text="25.18 kg/lbs"
+                                android:textColor="#0091EA"
+                                android:textSize="19sp"
+                                android:textStyle="bold"
+
+                                />
+
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+
+                            >
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="19sp"
+                                android:text="Rep Count = "
+                                android:gravity="center"
+                                android:textColor="@color/colorAccent"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="7-12/set"
+                                android:textColor="#0091EA"
+                                android:textStyle="bold"
+                                android:textSize="19sp"
+
+                                />
+
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Strength: "
+                            android:textSize="20sp"
+                            android:layout_marginTop="20dp"
+                            android:textColor="@color/colorAccent"
+                            android:textStyle="bold|italic"/>
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="To push past your limits and focus on strength, use a weight that’s 95% of your 1RM for sets of just 1-3 reps. This will feel heavy, so make sure you have a spotter to keep you safe during each lift."
+                            android:textSize="16sp"
+                            android:layout_marginTop="8dp"
+                            android:textColor="@color/grey_blue"
+                            />
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+
+                            >
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="19sp"
+                                android:text="95% 1RM = "
+                                android:gravity="center"
+                                android:textColor="@color/colorAccent"/>
+                            <TextView
+                                android:id="@+id/tvStrengthRM"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                tools:text="25.18 kg/lbs"
+                                android:textColor="#0091EA"
+                                android:textStyle="bold"
+                                android:textSize="19sp"
+
+                                />
+
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+
+                            >
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="19sp"
+                                android:text="Rep Count = "
+                                android:gravity="center"
+                                android:textColor="@color/colorAccent"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="1-3/set"
+                                android:textColor="#0091EA"
+                                android:textStyle="bold"
+                                android:textSize="19sp"
+
+                                />
+
+                        </LinearLayout>
+
+
+
+                    </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+
+
+     </RelativeLayout>
+
+</ScrollView>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name = "main_screen_image_height">220dp</dimen>
+    <dimen name = "main_screen_main_layout_padding">5dp</dimen>
+    <dimen name = "start_button_size">150dp</dimen>
+    <dimen name = "start_button_margin_top">20dp</dimen>
+    <dimen name = "start_button_label_textsize">22sp</dimen>
+
+
+
+
+</resources>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/tools"
+        android:icon="@drawable/ic_tools"
+        android:title="@string/tools" />
+    <item
+        android:id="@+id/sevenMinExercises"
+        android:icon="@drawable/ic_exercise1"
+        android:title="@string/Exercise"
+        />
+    <item
+        android:id="@+id/api"
+        android:icon="@drawable/ic_deadlift"
+        android:title="@string/api"/>
+    <item
+        android:id="@+id/history"
+        android:icon="@drawable/ic_hist"
+        android:title="@string/history"/>
+
+</menu>
