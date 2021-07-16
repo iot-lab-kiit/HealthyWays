@@ -300,6 +300,7 @@
                                 >
 
                                 <TextView
+                                    android:id="@+id/tvCalDefSur"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:text="Calorie Surplus "
@@ -310,7 +311,8 @@
                                     android:id="@+id/tvSurplus"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    tools:text=" 916.75 "
+                                    android:layout_marginLeft="10dp"
+                                    tools:text="916.75 "
                                     android:textColor="#0091EA"
                                     android:textSize="28sp"
                                     android:textStyle="bold"/>

@@ -64,7 +64,41 @@ class GoalCalculator : AppCompatActivity() {
 
 
         when {
+
             currentWeight > targetWeight -> {
+
+                Toast.makeText(this, "Here", Toast.LENGTH_SHORT).show()
+
+                val totalWeightLoss = currentWeight - targetWeight
+                Toast.makeText(this, "$totalWeightLoss", Toast.LENGTH_SHORT).show()
+                val totalCaloriesToLoose = totalWeightLoss * 7700
+                val totalDays = weeks * 7
+                val caloriesLoosePerDay = totalCaloriesToLoose / totalDays
+                Toast.makeText(this, "$caloriesLoosePerDay", Toast.LENGTH_SHORT).show()
+                val caloriesLoosePerDayFormatted = BigDecimal(caloriesLoosePerDay.toDouble()).setScale(2, RoundingMode.HALF_EVEN).toString()
+                if (caloriesLoosePerDayFormatted.toFloat() > 1000 || caloriesLoosePerDayFormatted.toFloat() < 0) {
+                    val snackBar = Snackbar.make(
+                        view, "❌ This goal seems to be too aggressive you should try to set an achievable and sustainable goal",
+                        Snackbar.LENGTH_LONG
+                    ).setAction("Action", null)
+                    snackBar.setActionTextColor(Color.BLUE)
+                    snackBar.show()
+                    Toast.makeText(this, "impossible", Toast.LENGTH_SHORT).show()
+
+                    llResultGC.visibility = View.GONE
+                }else{
+
+                    llResultGC.visibility = View.VISIBLE
+                    val goalCalorieResult = tee - caloriesLoosePerDayFormatted.toFloat()
+                    val finalGoalValue = BigDecimal(goalCalorieResult.toDouble()).setScale(2, RoundingMode.HALF_EVEN).toString()
+                    val deficitCaloriesValue = caloriesLoosePerDayFormatted.toFloat()
+
+                    tvKcalPerDayValue.text = finalGoalValue.toString()
+
+                    tvCalDefSur.text = "Calories Deficit"
+                    tvSurplus.text = deficitCaloriesValue.toString()
+                }
+
 
 
             }
@@ -79,10 +113,13 @@ class GoalCalculator : AppCompatActivity() {
                 if (caloriesGainPerDayFormatted.toFloat() > 1000 || caloriesGainPerDayFormatted.toFloat() < 0) {
 
                     val snackBar = Snackbar.make(
-                        view, "Replace with your own action",
+                        view, "This goal seems to be too aggressive you should try to set an achievable and sustainable goal",
                         Snackbar.LENGTH_LONG
                     ).setAction("Action", null)
                     snackBar.setActionTextColor(Color.BLUE)
+                    snackBar.show()
+
+                    llResultGC.visibility = View.GONE
 
                 }else{
 
@@ -97,6 +134,7 @@ class GoalCalculator : AppCompatActivity() {
 
             }
             else -> {
+                llResultGC.visibility = View.GONE
                 Toast.makeText(this, "Nice try but I got you 😉! Target Weight = Current Weight ", Toast.LENGTH_LONG).show()
             }
         }
