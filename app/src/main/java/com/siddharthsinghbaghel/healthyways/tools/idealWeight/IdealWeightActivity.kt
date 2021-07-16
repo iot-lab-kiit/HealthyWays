@@ -12,7 +12,6 @@ import android.widget.ScrollView
 import android.widget.Spinner
 import android.widget.Toast
 import com.siddharthsinghbaghel.healthyways.R
-import kotlinx.android.synthetic.main.activity_bmi.*
 import kotlinx.android.synthetic.main.activity_ideal_weight.*
 import java.math.BigDecimal
 import java.math.RoundingMode

@@ -17,10 +17,13 @@
     <style name="toolbar_theme" parent="@style/ThemeOverlay.AppCompat.ActionBar">
         <item name="colorControlNormal">#070707</item>
     </style>
+
     <style name="Theme.HealthyWays.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
     </style>
+
     <style name="Theme.HealthyWays.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
     <style name="Theme.HealthyWays.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 </resources>

@@ -10,6 +10,7 @@ import com.siddharthsinghbaghel.healthyways.R
 import com.siddharthsinghbaghel.healthyways.tools.BMI.BMICalculatorActivity
 import com.siddharthsinghbaghel.healthyways.tools.BMR.BMRCalculatorActivity
 import com.siddharthsinghbaghel.healthyways.tools.bodyFat.BodyFatCalculatorActivity
+import com.siddharthsinghbaghel.healthyways.tools.goalCalc.GoalCalculator
 import com.siddharthsinghbaghel.healthyways.tools.idealWeight.IdealWeightActivity
 import com.siddharthsinghbaghel.healthyways.tools.oneRM.OneRMCalculatorActivity
 import kotlinx.android.synthetic.main.fragment_tools.view.*
@@ -43,6 +44,10 @@ class ToolsFragment : Fragment() {
         }
         myToolsFragmentView.cvIdealWeight.setOnClickListener{
             val intent = Intent(context, IdealWeightActivity::class.java)
+            startActivity(intent)
+        }
+        myToolsFragmentView.cvGoalCalc.setOnClickListener{
+            val intent = Intent(context, GoalCalculator::class.java)
             startActivity(intent)
         }
 
