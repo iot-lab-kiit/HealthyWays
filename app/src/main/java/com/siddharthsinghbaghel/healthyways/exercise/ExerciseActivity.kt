@@ -30,7 +30,7 @@ class ExerciseActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
     private var exerciseProgress = 0
 
     private var exerciseList: ArrayList<ExerciseModel>? = null
-    private var currentExercisePosition = -1
+    private var currentExercisePosition = 0
     private var player: MediaPlayer? = null
 
     private var tts:TextToSpeech? = null /*  Instance of text to speech set to null because can't initialize directly*/
