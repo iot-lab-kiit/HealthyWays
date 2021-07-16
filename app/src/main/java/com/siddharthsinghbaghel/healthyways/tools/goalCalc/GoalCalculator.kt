@@ -27,7 +27,7 @@ class GoalCalculator : AppCompatActivity() {
 
         val actionBar = supportActionBar
         actionBar?.setDisplayHomeAsUpEnabled(true)
-        actionBar!!.title = "Body Fat Percentage"
+        actionBar!!.title = "Goal Calculator"
         toolbar_GC_activity.setNavigationOnClickListener {
 
             onBackPressed()
