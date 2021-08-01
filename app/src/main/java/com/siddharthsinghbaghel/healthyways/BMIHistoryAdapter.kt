@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.siddharthsinghbaghel.healthyways.room.BMIHistoryEntity
+import com.siddharthsinghbaghel.healthyways.room.bMIHistory.BMIHistoryEntity
 import kotlinx.android.synthetic.main.bmi_history_item.view.*
 import java.util.ArrayList
 

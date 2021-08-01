@@ -6,8 +6,8 @@ import android.view.View
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import com.siddharthsinghbaghel.healthyways.R
-import com.siddharthsinghbaghel.healthyways.room.BMIHistoryEntity
-import com.siddharthsinghbaghel.healthyways.room.BMIHistoryViewModel
+import com.siddharthsinghbaghel.healthyways.room.bMIHistory.BMIHistoryEntity
+import com.siddharthsinghbaghel.healthyways.room.bMIHistory.BMIHistoryViewModel
 import kotlinx.android.synthetic.main.activity_bmi.*
 import java.math.BigDecimal
 import java.math.RoundingMode

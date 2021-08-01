@@ -8,9 +8,8 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.siddharthsinghbaghel.healthyways.BMIHistoryAdapter
 import com.siddharthsinghbaghel.healthyways.R
-import com.siddharthsinghbaghel.healthyways.room.BMIHistoryEntity
-import com.siddharthsinghbaghel.healthyways.room.BMIHistoryViewModel
-import kotlinx.android.synthetic.main.activity_bmi.*
+import com.siddharthsinghbaghel.healthyways.room.bMIHistory.BMIHistoryEntity
+import com.siddharthsinghbaghel.healthyways.room.bMIHistory.BMIHistoryViewModel
 import kotlinx.android.synthetic.main.activity_bmi_history.*
 
 class BMIHistoryViewActivity : AppCompatActivity(), BMIHistoryAdapter.IBMIHistoryRVAdapter {

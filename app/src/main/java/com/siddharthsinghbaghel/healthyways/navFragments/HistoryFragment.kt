@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import com.siddharthsinghbaghel.healthyways.R
 import com.siddharthsinghbaghel.healthyways.tools.BMI.BMIHistoryViewActivity
+import com.siddharthsinghbaghel.healthyways.tools.idealWeight.IdealWeightHistoryActivity
 import kotlinx.android.synthetic.main.fragment_history.*
 import kotlinx.android.synthetic.main.fragment_history.view.*
 
@@ -26,6 +27,11 @@ class HistoryFragment : Fragment() {
         myHistoryFragmentView.llBMIHistory.setOnClickListener {
 
             val intent = Intent(context, BMIHistoryViewActivity::class.java)
+            startActivity(intent)
+        }
+        myHistoryFragmentView.llIWHistory.setOnClickListener {
+
+            val intent = Intent(context, IdealWeightHistoryActivity::class.java)
             startActivity(intent)
         }
 

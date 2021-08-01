@@ -9,10 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.HealthyWays">
+        <activity android:name=".tools.idealWeight.IdealWeightHistoryActivity"></activity>
         <activity
             android:name=".tools.goalCalc.GoalCalculator"
             android:label="@string/title_activity_goal_calculator"
-            android:theme="@style/Theme.HealthyWays.NoActionBar"></activity>
+            android:theme="@style/Theme.HealthyWays.NoActionBar" />
         <activity android:name=".tools.idealWeight.IdealWeightActivity" />
         <activity android:name=".tools.BMR.BMRCalculatorActivity" />
         <activity android:name=".tools.bodyFat.BodyFatCalculatorActivity" />

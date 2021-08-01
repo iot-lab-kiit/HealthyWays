@@ -31,6 +31,22 @@
                 android:padding="5dp"/>
         </LinearLayout>
 
+        <LinearLayout
+            android:id="@+id/llIWHistory"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/item_color_accent_border_ripple_effect"
+            android:gravity="center">
+
+            <ImageView
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:src="@drawable/ic_history"
+                android:padding="5dp"/>
+        </LinearLayout>
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

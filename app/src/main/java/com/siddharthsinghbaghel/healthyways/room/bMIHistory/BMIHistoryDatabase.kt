@@ -1,4 +1,4 @@
-package com.siddharthsinghbaghel.healthyways.room
+package com.siddharthsinghbaghel.healthyways.room.bMIHistory
 
 import android.content.Context
 import androidx.room.Database

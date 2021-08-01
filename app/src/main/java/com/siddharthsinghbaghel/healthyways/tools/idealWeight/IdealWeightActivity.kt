@@ -11,12 +11,20 @@ import android.widget.AdapterView
 import android.widget.ScrollView
 import android.widget.Spinner
 import android.widget.Toast
+import androidx.lifecycle.ViewModelProvider
 import com.siddharthsinghbaghel.healthyways.R
+import com.siddharthsinghbaghel.healthyways.room.bMIHistory.BMIHistoryEntity
+import com.siddharthsinghbaghel.healthyways.room.bMIHistory.BMIHistoryViewModel
+import com.siddharthsinghbaghel.healthyways.room.iWHistory.IWHistoryEntity
+import com.siddharthsinghbaghel.healthyways.room.iWHistory.IWHistoryViewModel
 import kotlinx.android.synthetic.main.activity_ideal_weight.*
 import java.math.BigDecimal
 import java.math.RoundingMode
 
 class IdealWeightActivity : AppCompatActivity() {
+
+
+    lateinit var viewModel: IWHistoryViewModel
     var mGender = 0;
     var mExerciseIndex = 0;
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -33,6 +41,10 @@ class IdealWeightActivity : AppCompatActivity() {
             onBackPressed()
         }
 
+        viewModel = ViewModelProvider(this,
+            ViewModelProvider.AndroidViewModelFactory.getInstance(application)).get(
+            IWHistoryViewModel::class.java)
+
         setSpinner(spGenderIw)
 
         btnCalculateIW.setOnClickListener {
@@ -46,6 +58,9 @@ class IdealWeightActivity : AppCompatActivity() {
                         val weightValue = etMetricIWWeight.text.toString().toFloat()
 
                         calculateIW(heightValue,weightValue)
+
+
+
             }else{
                 Toast.makeText(this, "Invalid Entries", Toast.LENGTH_SHORT).show()
             }
@@ -106,6 +121,9 @@ class IdealWeightActivity : AppCompatActivity() {
            tvDevineValue.text = devineResult
 
             llResultIW.visibility = View.VISIBLE
+
+            viewModel.insertIWHistory(IWHistoryEntity(robinsonResult,weightValue.toString(),heightValue.toString()))
+            Toast.makeText(this, "$robinsonResult Inserted", Toast.LENGTH_SHORT).show()
 
         }
 
