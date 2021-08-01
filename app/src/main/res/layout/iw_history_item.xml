@@ -51,6 +51,7 @@
                         android:layout_height="wrap_content"
                         android:textSize="16sp"
                         android:textStyle="bold"
+                        android:textColor="@color/darkGrey"
                         android:text="Ideal Weight"
                         android:layout_below="@+id/date"
                         android:layout_marginTop="35dp"
@@ -77,8 +78,10 @@
                         android:text="Height(cm)"
                         android:layout_alignParentEnd="true"
                         android:textStyle="bold"
+                        android:textColor="@color/darkGrey"
                         android:layout_marginTop="15dp"
                         android:layout_marginRight="18dp"
+
 
                         />
                     <TextView
@@ -86,6 +89,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         tools:text="180"
+                        android:textColor="@color/darkGrey"
                         android:layout_alignParentEnd="true"
                         android:layout_below="@+id/tvHeight"
 
@@ -99,7 +103,7 @@
                         android:text="Weight(kg)"
                         android:layout_alignParentEnd="true"
                         android:textStyle="bold"
-
+                        android:textColor="@color/darkGrey"
                         android:layout_below="@+id/txtHeightValue"
                         android:layout_marginRight="18dp"
 
@@ -109,6 +113,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         tools:text="80"
+                        android:textColor="@color/darkGrey"
                         android:layout_alignParentEnd="true"
                         android:layout_below="@+id/tvWeight"
                         android:layout_marginBottom="15dp"
