@@ -1,9 +1,11 @@
 package com.siddharthsinghbaghel.healthyways.tools.idealWeight
 
 
+import android.os.Build
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
+import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -12,6 +14,9 @@ import com.siddharthsinghbaghel.healthyways.R
 import com.siddharthsinghbaghel.healthyways.room.iWHistory.IWHistoryEntity
 import com.siddharthsinghbaghel.healthyways.room.iWHistory.IWHistoryViewModel
 import kotlinx.android.synthetic.main.activity_iw_history.*
+import kotlinx.android.synthetic.main.iw_history_item.*
+import java.time.LocalDateTime
+import java.time.format.DateTimeFormatter
 
 
 class IdealWeightHistoryActivity : AppCompatActivity(), IWHistoryAdapter.IIWHistoryRVAdapter {
@@ -19,6 +24,7 @@ class IdealWeightHistoryActivity : AppCompatActivity(), IWHistoryAdapter.IIWHist
 
     lateinit var viewModel: IWHistoryViewModel
 
+    @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_iw_history)
@@ -31,6 +37,7 @@ class IdealWeightHistoryActivity : AppCompatActivity(), IWHistoryAdapter.IIWHist
         toolbar_iw_history_activity.setNavigationOnClickListener {
             onBackPressed()
         }
+
 
         val iwHistoryRecyclerView = rvAllIwHistory
         val adapter = IWHistoryAdapter(this,this)

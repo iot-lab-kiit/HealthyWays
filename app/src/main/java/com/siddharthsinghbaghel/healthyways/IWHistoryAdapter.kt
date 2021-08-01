@@ -1,14 +1,19 @@
 package com.siddharthsinghbaghel.healthyways
 
 import android.content.Context
+import android.os.Build
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
+import androidx.annotation.RequiresApi
 import androidx.recyclerview.widget.RecyclerView
 import com.siddharthsinghbaghel.healthyways.room.iWHistory.IWHistoryEntity
 import kotlinx.android.synthetic.main.iw_history_item.view.*
+import java.time.LocalDateTime
+import java.time.format.DateTimeFormatter
 import java.util.*
 
 class IWHistoryAdapter(private val context: Context, private val listener: IIWHistoryRVAdapter):
@@ -21,6 +26,7 @@ class IWHistoryAdapter(private val context: Context, private val listener: IIWHi
          val iwHeight: TextView = view.txtHeightValue
          val iwWeight: TextView= view.txtWeightValue
          val btnDelete: ImageView = view.btnIWDelete
+         val dateTime: TextView = view.date
      }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): IWHistoryViewHolder {
@@ -31,6 +37,7 @@ class IWHistoryAdapter(private val context: Context, private val listener: IIWHi
         return viewHolder
     }
 
+    @RequiresApi(Build.VERSION_CODES.O)
     override fun onBindViewHolder(holder: IWHistoryViewHolder, position: Int) {
 
 
@@ -38,6 +45,7 @@ class IWHistoryAdapter(private val context: Context, private val listener: IIWHi
         holder.iwHeight.text = currentHistory.iwHeight
         holder.iwValue.text = currentHistory.IWValue
         holder.iwWeight.text = currentHistory.iwWeight
+        holder.dateTime.text = currentHistory.iwDateT
 
 
 

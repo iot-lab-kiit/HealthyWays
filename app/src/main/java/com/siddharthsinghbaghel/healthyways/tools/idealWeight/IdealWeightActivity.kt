@@ -3,7 +3,7 @@ package com.siddharthsinghbaghel.healthyways.tools.idealWeight
 import android.content.Context
 import android.content.Intent
 import android.net.Uri
-import androidx.appcompat.app.AppCompatActivity
+import android.os.Build
 import android.os.Bundle
 import android.view.View
 import android.view.inputmethod.InputMethodManager
@@ -11,15 +11,18 @@ import android.widget.AdapterView
 import android.widget.ScrollView
 import android.widget.Spinner
 import android.widget.Toast
+import androidx.annotation.RequiresApi
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import com.siddharthsinghbaghel.healthyways.R
-import com.siddharthsinghbaghel.healthyways.room.bMIHistory.BMIHistoryEntity
-import com.siddharthsinghbaghel.healthyways.room.bMIHistory.BMIHistoryViewModel
 import com.siddharthsinghbaghel.healthyways.room.iWHistory.IWHistoryEntity
 import com.siddharthsinghbaghel.healthyways.room.iWHistory.IWHistoryViewModel
 import kotlinx.android.synthetic.main.activity_ideal_weight.*
+import kotlinx.android.synthetic.main.iw_history_item.*
 import java.math.BigDecimal
 import java.math.RoundingMode
+import java.time.LocalDateTime
+import java.time.format.DateTimeFormatter
 
 class IdealWeightActivity : AppCompatActivity() {
 
@@ -27,6 +30,7 @@ class IdealWeightActivity : AppCompatActivity() {
     lateinit var viewModel: IWHistoryViewModel
     var mGender = 0;
     var mExerciseIndex = 0;
+    @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_ideal_weight)
@@ -75,7 +79,8 @@ class IdealWeightActivity : AppCompatActivity() {
 
     }
 
-    private fun calculateIW(heightValue: Float,weightValue: Float) {
+    @RequiresApi(Build.VERSION_CODES.O)
+    private fun calculateIW(heightValue: Float, weightValue: Float) {
 
 
         if(heightValue <= 153)
@@ -115,6 +120,7 @@ class IdealWeightActivity : AppCompatActivity() {
             val devineResult = BigDecimal(devineValue).setScale(2, RoundingMode.HALF_EVEN).toString()
 
 
+
            tvRobinValue.text = robinsonResult
            tvMillerValue.text = millerResult
            tvHamwiValue.text = hamwiResult
@@ -122,7 +128,11 @@ class IdealWeightActivity : AppCompatActivity() {
 
             llResultIW.visibility = View.VISIBLE
 
-            viewModel.insertIWHistory(IWHistoryEntity(robinsonResult,weightValue.toString(),heightValue.toString()))
+
+            val currentDateTime = LocalDateTime.now()
+            val x = currentDateTime.format(DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm")).toString()
+
+            viewModel.insertIWHistory(IWHistoryEntity(robinsonResult,weightValue.toString(),heightValue.toString(),x))
             Toast.makeText(this, "$robinsonResult Inserted", Toast.LENGTH_SHORT).show()
 
         }
