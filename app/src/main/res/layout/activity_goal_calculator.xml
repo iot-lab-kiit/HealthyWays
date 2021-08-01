@@ -346,34 +346,6 @@
 
                 </LinearLayout>
 
-                <LinearLayout
-
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:layout_gravity="center"
-                    android:padding="5dp">
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="5dp"
-                        android:gravity="center"
-                        android:textSize="12sp"
-                        android:text="For References and if you want to know about Ideal Weight more  " />
-
-                    <TextView
-                        android:id="@+id/tvBmiRedirect"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="5dp"
-                        android:gravity="center"
-                        android:textSize="12sp"
-                        android:textColor="#0091EA"
-                        android:text="Click Here "
-                        android:onClick="referenceCalled"/>
-
-                </LinearLayout>
-
             </LinearLayout>
         </LinearLayout>
 
