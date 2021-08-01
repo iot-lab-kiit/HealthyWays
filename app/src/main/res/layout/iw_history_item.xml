@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:layout_margin="10dp"
+        android:backgroundTint="@color/colorAccent"
+        >
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+
+                <RelativeLayout
+                    android:id="@+id/llData"
+                    android:layout_width="300dp"
+                    android:layout_height="110dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/cardview_bg"
+
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.183"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0">
+
+                    <TextView
+                        android:id="@+id/date"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#9E9B9B"
+                        android:textStyle="bold"
+                        tools:text="02/08/2021"
+                        android:padding="8dp"
+                        />
+
+                    <TextView
+                        android:id="@+id/txtIW"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:text="Ideal Weight"
+                        android:layout_below="@+id/date"
+                        android:layout_marginTop="35dp"
+                        android:padding="5dp"
+                        />
+
+                    <TextView
+                        android:id="@+id/txtIWValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/date"
+                        android:layout_marginLeft="3dp"
+                        android:layout_marginTop="31dp"
+                        android:layout_toRightOf="@+id/txtIW"
+                        android:padding="5dp"
+                        android:textColor="#0091EA"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        tools:text="71.90" />
+                    <TextView
+                        android:id="@+id/tvHeight"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Height(cm)"
+                        android:layout_alignParentEnd="true"
+                        android:textStyle="bold"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginRight="18dp"
+
+                        />
+                    <TextView
+                        android:id="@+id/txtHeightValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tools:text="180"
+                        android:layout_alignParentEnd="true"
+                        android:layout_below="@+id/tvHeight"
+
+                        android:layout_marginRight="18dp"
+
+                        />
+                    <TextView
+                        android:id="@+id/tvWeight"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Weight(kg)"
+                        android:layout_alignParentEnd="true"
+                        android:textStyle="bold"
+
+                        android:layout_below="@+id/txtHeightValue"
+                        android:layout_marginRight="18dp"
+
+                        />
+                    <TextView
+                        android:id="@+id/txtWeightValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tools:text="80"
+                        android:layout_alignParentEnd="true"
+                        android:layout_below="@+id/tvWeight"
+                        android:layout_marginBottom="15dp"
+                        android:layout_marginRight="18dp"
+
+                        />
+
+                    <ImageView
+                        android:id="@+id/imageView"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_centerHorizontal="true"
+                        android:src="@drawable/ic_exercise1" />
+
+
+                </RelativeLayout>
+
+                <ImageView
+                    android:id="@+id/btnIWDelete"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_weight="0.1"
+                    android:src="@drawable/ic_elete"
+
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/llData"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>
+
