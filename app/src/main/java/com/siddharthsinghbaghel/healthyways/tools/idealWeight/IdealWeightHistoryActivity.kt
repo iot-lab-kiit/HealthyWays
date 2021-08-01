@@ -16,17 +16,18 @@ import kotlinx.android.synthetic.main.activity_iw_history.*
 
 class IdealWeightHistoryActivity : AppCompatActivity(), IWHistoryAdapter.IIWHistoryRVAdapter {
 
+
     lateinit var viewModel: IWHistoryViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_ideal_weight_history)
+        setContentView(R.layout.activity_iw_history)
 
         setSupportActionBar(toolbar_iw_history_activity)
 
         val actionBar = supportActionBar
         actionBar?.setDisplayHomeAsUpEnabled(true)
-        actionBar!!.title = "BMI History"
+        actionBar!!.title = "Ideal weight History"
         toolbar_iw_history_activity.setNavigationOnClickListener {
             onBackPressed()
         }
