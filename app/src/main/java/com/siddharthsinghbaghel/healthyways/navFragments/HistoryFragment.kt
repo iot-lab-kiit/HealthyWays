@@ -22,12 +22,12 @@ class HistoryFragment : Fragment() {
         // Inflate the layout for this fragment
         val myHistoryFragmentView =  inflater.inflate(R.layout.fragment_history, container, false)
 
-        myHistoryFragmentView.llBMIHistory.setOnClickListener {
+        myHistoryFragmentView.cvBMI.setOnClickListener {
 
             val intent = Intent(context, BMIHistoryViewActivity::class.java)
             startActivity(intent)
         }
-        myHistoryFragmentView.llIWHistory.setOnClickListener {
+        myHistoryFragmentView.cvIW.setOnClickListener {
 
             val intent = Intent(context, IdealWeightHistoryActivity::class.java)
             startActivity(intent)

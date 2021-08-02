@@ -29,7 +29,7 @@ class IdealWeightActivity : AppCompatActivity() {
 
     lateinit var viewModel: IWHistoryViewModel
     var mGender = 0;
-    var mExerciseIndex = 0;
+
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
