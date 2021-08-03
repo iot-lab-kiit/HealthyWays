@@ -3,7 +3,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    >
 
 
   <ScrollView
@@ -22,13 +23,15 @@
         android:layout_margin="10dp"
         app:cardCornerRadius="18dp"
         android:elevation="20dp"
-       >
+        android:clickable="true"
+        android:focusable="true">
 
         <RelativeLayout
-
+        android:background="?attr/selectableItemBackground"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
+
             >
 
          <ImageView
@@ -68,7 +71,7 @@
         >
 
         <RelativeLayout
-
+            android:background="?attr/selectableItemBackground"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
@@ -111,6 +114,7 @@
         >
 
         <RelativeLayout
+            android:background="?attr/selectableItemBackground"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
@@ -152,6 +156,7 @@
         >
 
         <RelativeLayout
+            android:background="?attr/selectableItemBackground"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
@@ -195,6 +200,7 @@
         >
 
         <RelativeLayout
+            android:background="?attr/selectableItemBackground"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
@@ -236,6 +242,7 @@
         >
 
         <RelativeLayout
+            android:background="?attr/selectableItemBackground"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
