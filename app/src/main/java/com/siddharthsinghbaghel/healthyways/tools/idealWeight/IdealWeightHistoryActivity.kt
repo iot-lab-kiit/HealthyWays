@@ -9,14 +9,11 @@ import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.siddharthsinghbaghel.healthyways.IWHistoryAdapter
+import com.siddharthsinghbaghel.healthyways.adapters.IWHistoryAdapter
 import com.siddharthsinghbaghel.healthyways.R
 import com.siddharthsinghbaghel.healthyways.room.iWHistory.IWHistoryEntity
 import com.siddharthsinghbaghel.healthyways.room.iWHistory.IWHistoryViewModel
 import kotlinx.android.synthetic.main.activity_iw_history.*
-import kotlinx.android.synthetic.main.iw_history_item.*
-import java.time.LocalDateTime
-import java.time.format.DateTimeFormatter
 
 
 class IdealWeightHistoryActivity : AppCompatActivity(), IWHistoryAdapter.IIWHistoryRVAdapter {

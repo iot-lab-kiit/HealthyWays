@@ -1,24 +1,37 @@
 package com.siddharthsinghbaghel.healthyways.tools.oneRM
 
+import android.os.Build
 import android.os.Bundle
 import android.view.View
 import android.widget.AdapterView
 import android.widget.Spinner
 import android.widget.Toast
+import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.ViewModelProvider
 import com.siddharthsinghbaghel.healthyways.R
+import com.siddharthsinghbaghel.healthyways.room.history.HistoryViewModel
+import com.siddharthsinghbaghel.healthyways.room.history.entities.OneRMCalcHistoryEntity
+import com.siddharthsinghbaghel.healthyways.room.iWHistory.IWHistoryEntity
+import com.siddharthsinghbaghel.healthyways.room.iWHistory.IWHistoryViewModel
 import kotlinx.android.synthetic.main.activity_bmi.*
 import kotlinx.android.synthetic.main.activity_one_r_m_calculater.*
 import kotlinx.android.synthetic.main.activity_one_r_m_calculater.toolbar_oneRM_activity
 import java.math.BigDecimal
 import java.math.RoundingMode
+import java.time.LocalDateTime
+import java.time.format.DateTimeFormatter
 
 class OneRMCalculatorActivity : AppCompatActivity() {
 
     val METRIC_UNITS_VIEW = "METRIC_UNITS_VIEW"
     val US_UNITS_VIEW = "US_UNITS_VIEW"
     var currentVisibleView: String = "METRIC_UNITS_VIEW"
+    var exerciseSelect: String = "Squats"
 
+    lateinit var viewModel: HistoryViewModel
+
+    @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_one_r_m_calculater)
@@ -34,7 +47,9 @@ class OneRMCalculatorActivity : AppCompatActivity() {
         }
 
 
-
+        viewModel = ViewModelProvider(this,
+            ViewModelProvider.AndroidViewModelFactory.getInstance(application)).get(
+            HistoryViewModel::class.java)
 
 
         btnCalculateUnitsRM.setOnClickListener {
@@ -106,6 +121,7 @@ class OneRMCalculatorActivity : AppCompatActivity() {
 
 
 
+    @RequiresApi(Build.VERSION_CODES.O)
     private fun calculateOneRM(repValue: Float, weightValue: Float) {
 
 
@@ -128,6 +144,16 @@ class OneRMCalculatorActivity : AppCompatActivity() {
         tvSpeedRM.text = speedRMValue
         tvStrengthRM.text = strengthRMValue
         tvMuscleRM.text = muscleRMValue
+
+        /*Insertion on database */
+
+        val currentDateTime = LocalDateTime.now()
+        val x = currentDateTime.format(DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm")).toString()
+
+        viewModel.insertORMHistory(OneRMCalcHistoryEntity(exerciseSelect,weightValue.toString(),repValue.toString(),oneRMValue,x))
+        Toast.makeText(this, "$oneRMValue Inserted", Toast.LENGTH_SHORT).show()
+
+        /*Insertion on database */
 
     }
 
@@ -228,15 +254,19 @@ class OneRMCalculatorActivity : AppCompatActivity() {
                 when (position) {
                     0 -> {
                         resultExerciseImage.setImageResource(R.drawable.ic_squats_1)
+                        exerciseSelect = "Squats"
                     }
                     1 -> {
                         resultExerciseImage.setImageResource(R.drawable.ic_deadlift_1)
+                        exerciseSelect = "Deadlift"
                     }
                     2 -> {
                         resultExerciseImage.setImageResource(R.drawable.ic_overhead_press)
+                        exerciseSelect = "OverHead Press"
                     }
                     3 -> {
                         resultExerciseImage.setImageResource(R.drawable.ic_benchpress_1)
+                        exerciseSelect = "Bench Press"
                     }
                 }
             }

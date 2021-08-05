@@ -145,7 +145,7 @@
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/cv1RM"
+        android:id="@+id/cvORMHistory"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:backgroundTint="#0A9F48"
@@ -195,7 +195,7 @@
         android:backgroundTint="#FFAB00"
         android:layout_margin="10dp"
         app:cardCornerRadius="18dp"
-        android:layout_below="@id/cv1RM"
+        android:layout_below="@id/cvORMHistory"
         android:elevation="20dp"
         >
 

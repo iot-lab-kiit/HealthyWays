@@ -36,7 +36,7 @@
                     app:layout_constraintVertical_bias="0.0">
 
                     <TextView
-                        android:id="@+id/date"
+                        android:id="@+id/dateORM"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textColor="#9E9B9B"
@@ -53,16 +53,16 @@
                         android:textStyle="bold"
                         android:textColor="@color/darkGrey"
                         android:text="1Rm : "
-                        android:layout_below="@+id/date"
+                        android:layout_below="@+id/dateORM"
                         android:layout_marginTop="5dp"
                         android:padding="5dp"
                         />
 
                     <TextView
-                        android:id="@+id/txtPercValue"
+                        android:id="@+id/txt1RMValue"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_below="@+id/date"
+                        android:layout_below="@+id/dateORM"
                         android:layout_marginLeft="3dp"
                         android:layout_marginTop="5dp"
                         android:layout_toRightOf="@+id/txtFatPerc"
@@ -85,7 +85,7 @@
                         />
 
                     <TextView
-                        android:id="@+id/txtIWValue"
+                        android:id="@+id/txtExercise"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/txtFatPerc"
@@ -111,7 +111,7 @@
 
                         />
                     <TextView
-                        android:id="@+id/txtHeightValue"
+                        android:id="@+id/txtWeightUsed"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         tools:text="10"
@@ -130,12 +130,12 @@
                         android:layout_alignParentEnd="true"
                         android:textStyle="bold"
                         android:textColor="@color/darkGrey"
-                        android:layout_below="@+id/txtHeightValue"
+                        android:layout_below="@+id/txtWeightUsed"
                         android:layout_marginRight="18dp"
 
                         />
                     <TextView
-                        android:id="@+id/txtWeightValue"
+                        android:id="@+id/txtRepValue"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         tools:text="6"
@@ -159,7 +159,7 @@
                 </RelativeLayout>
 
                 <ImageView
-                    android:id="@+id/btnIWDelete"
+                    android:id="@+id/btnORMDelete"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
                     android:layout_weight="0.1"

@@ -14,7 +14,7 @@
         android:background="#64DD17"/>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvAllBmiHistory"
+        android:id="@+id/rvAllORMHistory"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:visibility="visible"
@@ -22,7 +22,7 @@
 
         />
     <com.airbnb.lottie.LottieAnimationView
-        android:id="@+id/laYoga"
+        android:id="@+id/omrLaYoga"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
@@ -32,7 +32,7 @@
         android:visibility="gone"/>
 
     <TextView
-        android:id="@+id/tvEmpty"
+        android:id="@+id/tvEmptyOrm"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Empty History"

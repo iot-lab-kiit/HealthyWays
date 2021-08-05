@@ -1,4 +1,4 @@
-package com.siddharthsinghbaghel.healthyways
+package com.siddharthsinghbaghel.healthyways.adapters
 
 import android.content.Context
 import android.os.Build
@@ -7,13 +7,11 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.recyclerview.widget.RecyclerView
+import com.siddharthsinghbaghel.healthyways.R
 import com.siddharthsinghbaghel.healthyways.room.iWHistory.IWHistoryEntity
 import kotlinx.android.synthetic.main.iw_history_item.view.*
-import java.time.LocalDateTime
-import java.time.format.DateTimeFormatter
 import java.util.*
 
 class IWHistoryAdapter(private val context: Context, private val listener: IIWHistoryRVAdapter):

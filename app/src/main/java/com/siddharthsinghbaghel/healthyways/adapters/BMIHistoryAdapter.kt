@@ -1,4 +1,4 @@
-package com.siddharthsinghbaghel.healthyways
+package com.siddharthsinghbaghel.healthyways.adapters
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.siddharthsinghbaghel.healthyways.R
 import com.siddharthsinghbaghel.healthyways.room.bMIHistory.BMIHistoryEntity
 import kotlinx.android.synthetic.main.bmi_history_item.view.*
 import java.util.ArrayList

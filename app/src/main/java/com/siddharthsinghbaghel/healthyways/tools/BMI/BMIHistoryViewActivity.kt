@@ -6,7 +6,7 @@ import android.view.View
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.siddharthsinghbaghel.healthyways.BMIHistoryAdapter
+import com.siddharthsinghbaghel.healthyways.adapters.BMIHistoryAdapter
 import com.siddharthsinghbaghel.healthyways.R
 import com.siddharthsinghbaghel.healthyways.room.bMIHistory.BMIHistoryEntity
 import com.siddharthsinghbaghel.healthyways.room.bMIHistory.BMIHistoryViewModel
