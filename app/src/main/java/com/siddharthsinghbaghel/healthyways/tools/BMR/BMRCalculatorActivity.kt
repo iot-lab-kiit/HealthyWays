@@ -3,6 +3,7 @@ package com.siddharthsinghbaghel.healthyways.tools.BMR
 import android.content.Context
 import android.content.Intent
 import android.net.Uri
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -11,15 +12,28 @@ import android.widget.AdapterView
 import android.widget.ScrollView
 import android.widget.Spinner
 import android.widget.Toast
+import androidx.annotation.RequiresApi
+import androidx.lifecycle.ViewModelProvider
 import com.siddharthsinghbaghel.healthyways.R
+import com.siddharthsinghbaghel.healthyways.room.history.HistoryViewModel
+import com.siddharthsinghbaghel.healthyways.room.history.entities.BMRCalcHistoryEntity
+import com.siddharthsinghbaghel.healthyways.room.iWHistory.IWHistoryEntity
+import com.siddharthsinghbaghel.healthyways.room.iWHistory.IWHistoryViewModel
 import kotlinx.android.synthetic.main.activity_b_m_r_calculator.*
 import java.math.BigDecimal
 import java.math.RoundingMode
+import java.time.LocalDateTime
+import java.time.format.DateTimeFormatter
 
 class BMRCalculatorActivity : AppCompatActivity() {
 
     var mGender = 0;
     var mExerciseIndex = 0;
+    var exerExtent = "Sedentary"
+
+    lateinit var viewModel: HistoryViewModel
+
+    @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_b_m_r_calculator)
@@ -33,6 +47,11 @@ class BMRCalculatorActivity : AppCompatActivity() {
 
             onBackPressed()
         }
+
+
+        viewModel = ViewModelProvider(this,
+            ViewModelProvider.AndroidViewModelFactory.getInstance(application)).get(
+            HistoryViewModel::class.java)
 
         setSpinnerExercise(spExtentExercise)
         setSpinnerGen(spGenderBMR)
@@ -56,6 +75,7 @@ class BMRCalculatorActivity : AppCompatActivity() {
         }
     }
 
+    @RequiresApi(Build.VERSION_CODES.O)
     private fun calculateBMR(ageValue: Float, heightValue: Float, weightValue: Float) {
 
         var bmrResult = (66 + (13.7 * weightValue) + (5 * heightValue) - (6.8 * ageValue))
@@ -114,6 +134,14 @@ class BMRCalculatorActivity : AppCompatActivity() {
 
         tvTDEEValue.text = resultTDEEValue
         tvBMRValue.text = resultBMRValue
+
+
+
+        val currentDateTime = LocalDateTime.now()
+        val x = currentDateTime.format(DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm")).toString()
+
+        viewModel.insertBMRHistory(BMRCalcHistoryEntity(exerExtent,weightValue.toString(),heightValue.toString(),x,bmrResult.toString(),tdeeResult.toString()))
+        Toast.makeText(this, "$bmrResult Inserted", Toast.LENGTH_SHORT).show()
 
     }
 
@@ -177,18 +205,23 @@ class BMRCalculatorActivity : AppCompatActivity() {
                 when (position) {
                     0 -> {
                        mExerciseIndex = 0
+                        exerExtent = "Sedentary"
                     }
                     1 -> {
                         mExerciseIndex = 1
+                        exerExtent = "Lightly Active"
                     }
                     2 -> {
                         mExerciseIndex = 2
+                        exerExtent = "Moderately Active"
                     }
                     3 -> {
                         mExerciseIndex = 3
+                        exerExtent = "Very Active"
                     }
                     4 -> {
                         mExerciseIndex = 4
+                        exerExtent = "Extreme Active"
                     }
                 }
             }

@@ -36,7 +36,7 @@
                     app:layout_constraintVertical_bias="0.0">
 
                     <TextView
-                        android:id="@+id/date"
+                        android:id="@+id/dateBMR"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textColor="#9E9B9B"
@@ -53,16 +53,16 @@
                         android:textStyle="bold"
                         android:textColor="@color/darkGrey"
                         android:text="BMR "
-                        android:layout_below="@+id/date"
+                        android:layout_below="@+id/dateBMR"
                         android:layout_marginTop="5dp"
                         android:padding="5dp"
                         />
 
                     <TextView
-                        android:id="@+id/txtPercValue"
+                        android:id="@+id/txtBmrValue"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_below="@+id/date"
+                        android:layout_below="@+id/dateBMR"
                         android:layout_marginTop="5dp"
                         android:layout_toRightOf="@+id/txtFatPerc"
                         android:padding="5dp"
@@ -84,7 +84,7 @@
                         />
 
                     <TextView
-                        android:id="@+id/txtIWValue"
+                        android:id="@+id/txtTdeeValue"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/txtFatPerc"
@@ -185,7 +185,7 @@
                 </RelativeLayout>
 
                 <ImageView
-                    android:id="@+id/btnIWDelete"
+                    android:id="@+id/btnBMRDelete"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
                     android:layout_weight="0.1"

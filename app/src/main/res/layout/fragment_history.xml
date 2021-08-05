@@ -189,7 +189,7 @@
 
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/cvBMR"
+        android:id="@+id/cvBMRHistory"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:backgroundTint="#FFAB00"
@@ -237,7 +237,7 @@
         android:backgroundTint="#D5538D"
         android:layout_margin="10dp"
         app:cardCornerRadius="18dp"
-        android:layout_below="@id/cvBMR"
+        android:layout_below="@id/cvBMRHistory"
         android:elevation="20dp"
         >
 
