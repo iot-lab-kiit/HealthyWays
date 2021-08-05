@@ -1,13 +1,19 @@
 package com.siddharthsinghbaghel.healthyways.tools.bodyFat
 
 import android.content.Intent
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.AdapterView
 import android.widget.Spinner
 import android.widget.Toast
+import androidx.annotation.RequiresApi
+import androidx.lifecycle.ViewModelProvider
 import com.siddharthsinghbaghel.healthyways.R
+import com.siddharthsinghbaghel.healthyways.room.history.HistoryViewModel
+import com.siddharthsinghbaghel.healthyways.room.history.entities.BMRCalcHistoryEntity
+import com.siddharthsinghbaghel.healthyways.room.history.entities.FatCalcHistoryEntity
 import com.siddharthsinghbaghel.healthyways.tools.BMI.BMICalculatorActivity
 import kotlinx.android.synthetic.main.activity_b_m_r_calculator.*
 import kotlinx.android.synthetic.main.activity_bmi.*
@@ -23,11 +29,16 @@ import kotlinx.android.synthetic.main.activity_body_fat_calculator.tvFatPercBFCV
 import kotlinx.android.synthetic.main.activity_one_r_m_calculater.*
 import java.math.BigDecimal
 import java.math.RoundingMode
+import java.time.LocalDateTime
+import java.time.format.DateTimeFormatter
 
 class BodyFatCalculatorActivity : AppCompatActivity() {
 
     var mGender = 0
 
+    lateinit var viewModel : HistoryViewModel
+
+    @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_body_fat_calculator)
@@ -42,6 +53,10 @@ class BodyFatCalculatorActivity : AppCompatActivity() {
             onBackPressed()
         }
 
+
+        viewModel = ViewModelProvider(this,
+            ViewModelProvider.AndroidViewModelFactory.getInstance(application)).get(
+            HistoryViewModel::class.java)
 
 
         setSpinner(spGender)
@@ -64,7 +79,8 @@ class BodyFatCalculatorActivity : AppCompatActivity() {
               }
           }
 
-    private fun calculateBF(ageValue: Float, bmiValue: Float,weightValue: Float) {
+    @RequiresApi(Build.VERSION_CODES.O)
+    private fun calculateBF(ageValue: Float, bmiValue: Float, weightValue: Float) {
 
         llResultBFC.visibility = View.VISIBLE
         when (mGender) {
@@ -76,6 +92,13 @@ class BodyFatCalculatorActivity : AppCompatActivity() {
                 val massFatValue = BigDecimal(massFat).setScale(2, RoundingMode.HALF_EVEN).toString()
                 tvFatPercBFCValue.text = resultBFValue
                 tvFatMassBFCValue.text = massFatValue
+
+                val currentDateTime = LocalDateTime.now()
+                val x = currentDateTime.format(DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm")).toString()
+
+                viewModel.insertFatHistory(FatCalcHistoryEntity(resultBFValue,massFatValue,ageValue.toString(),bmiValue.toString(),x))
+                Toast.makeText(this, "$resultBFValue Inserted", Toast.LENGTH_SHORT).show()
+
             }
             1 -> {
                 print(mGender)
@@ -85,8 +108,18 @@ class BodyFatCalculatorActivity : AppCompatActivity() {
                 val massFatValue = BigDecimal(massFat).setScale(2, RoundingMode.HALF_EVEN).toString()
                 tvFatPercBFCValue.text = resultBFValue
                 tvFatMassBFCValue.text = massFatValue
+
+
+                val currentDateTime = LocalDateTime.now()
+                val x = currentDateTime.format(DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm")).toString()
+
+                viewModel.insertFatHistory(FatCalcHistoryEntity(resultBFValue,massFatValue,ageValue.toString(),bmiValue.toString(),x))
+                Toast.makeText(this, "$resultBFValue Inserted", Toast.LENGTH_SHORT).show()
             }
         }
+
+
+
     }
 
 
