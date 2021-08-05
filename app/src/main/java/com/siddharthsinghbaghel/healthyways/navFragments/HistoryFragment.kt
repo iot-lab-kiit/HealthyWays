@@ -10,6 +10,7 @@ import com.siddharthsinghbaghel.healthyways.R
 import com.siddharthsinghbaghel.healthyways.tools.BMI.BMIHistoryViewActivity
 import com.siddharthsinghbaghel.healthyways.tools.BMR.BMRHistoryViewActivity
 import com.siddharthsinghbaghel.healthyways.tools.bodyFat.FatHistoryViewActivity
+import com.siddharthsinghbaghel.healthyways.tools.goalCalc.GCHistoryViewActivity
 import com.siddharthsinghbaghel.healthyways.tools.idealWeight.IdealWeightHistoryActivity
 import com.siddharthsinghbaghel.healthyways.tools.oneRM.ORMHistoryViewActivity
 import kotlinx.android.synthetic.main.fragment_history.view.*
@@ -49,6 +50,11 @@ class HistoryFragment : Fragment() {
         myHistoryFragmentView.cvFatHistory.setOnClickListener {
 
             val intent = Intent(context, FatHistoryViewActivity::class.java)
+            startActivity(intent)
+        }
+        myHistoryFragmentView.cvGCHistory.setOnClickListener {
+
+            val intent = Intent(context, GCHistoryViewActivity::class.java)
             startActivity(intent)
         }
 

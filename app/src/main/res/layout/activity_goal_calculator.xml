@@ -32,7 +32,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                tools:visibility="gone">
+                tools:visibility="visible">
 
 
                 <com.google.android.material.textfield.TextInputLayout
@@ -112,6 +112,7 @@
                         android:textColor="#0091EA"
                         android:textStyle="bold"
                         android:text="Click Here "
+                        android:onClick="openBMRCalculator"
                         />
 
                 </LinearLayout>
@@ -164,6 +165,7 @@
                     android:textColor="#0091EA"
                     android:textStyle="bold"
                     android:text="Click Here "
+                    android:onClick="openConverter"
                     />
 
             </LinearLayout>

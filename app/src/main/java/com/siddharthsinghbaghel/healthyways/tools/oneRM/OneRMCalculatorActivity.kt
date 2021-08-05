@@ -1,8 +1,12 @@
 package com.siddharthsinghbaghel.healthyways.tools.oneRM
 
+import android.content.Context
+import android.content.Intent
+import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.view.View
+import android.view.inputmethod.InputMethodManager
 import android.widget.AdapterView
 import android.widget.Spinner
 import android.widget.Toast
@@ -53,6 +57,8 @@ class OneRMCalculatorActivity : AppCompatActivity() {
 
 
         btnCalculateUnitsRM.setOnClickListener {
+
+            hideKeyboard(it)
 
             if(validateUnits()){
 
@@ -282,5 +288,18 @@ class OneRMCalculatorActivity : AppCompatActivity() {
                         Toast.LENGTH_SHORT).show()
             }
         }
+    }
+
+    private fun hideKeyboard(view: View) {
+        view.apply {
+            val imm = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+            imm.hideSoftInputFromWindow(view.windowToken, 0)
+        }
+    }
+
+    fun referenceCalled(view: View) {
+        val intent = Intent("android.intent.action.VIEW", Uri.parse("https://en.wikipedia.org/wiki/One-repetition_maximum"));
+        startActivity(intent)
+
     }
 }

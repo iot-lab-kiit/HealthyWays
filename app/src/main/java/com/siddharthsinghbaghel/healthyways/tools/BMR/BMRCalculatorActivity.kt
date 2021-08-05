@@ -251,4 +251,9 @@ class BMRCalculatorActivity : AppCompatActivity() {
         }
     }
 
+    fun openConverterBMR(view: View) {
+        val intent = Intent("android.intent.action.VIEW", Uri.parse("https://www.unitconverters.net/"));
+        startActivity(intent)
+    }
+
 }

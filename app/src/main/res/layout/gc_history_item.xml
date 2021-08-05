@@ -36,7 +36,7 @@
                 app:layout_constraintVertical_bias="0.0">
 
                 <TextView
-                    android:id="@+id/date"
+                    android:id="@+id/dateGC"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="#9E9B9B"
@@ -53,16 +53,16 @@
                     android:textStyle="bold"
                     android:textColor="@color/darkGrey"
                     android:text="kCal/d "
-                    android:layout_below="@+id/date"
+                    android:layout_below="@+id/dateGC"
                     android:layout_marginTop="25dp"
                     android:padding="5dp"
                     />
 
                 <TextView
-                    android:id="@+id/txtPercValue"
+                    android:id="@+id/txtCalValue"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/date"
+                    android:layout_below="@+id/dateGC"
                     android:layout_marginTop="25dp"
                     android:layout_toRightOf="@+id/txtFatPerc"
                     android:padding="5dp"
@@ -163,7 +163,7 @@
             </RelativeLayout>
 
             <ImageView
-                android:id="@+id/btnIWDelete"
+                android:id="@+id/btnGCDelete"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:layout_weight="0.1"

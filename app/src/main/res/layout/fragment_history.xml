@@ -231,7 +231,7 @@
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/cvGC"
+        android:id="@+id/cvGCHistory"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:backgroundTint="#D5538D"

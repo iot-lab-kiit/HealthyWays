@@ -1,8 +1,10 @@
 package com.siddharthsinghbaghel.healthyways.tools.BMI
 
+import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.view.inputmethod.InputMethodManager
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import com.siddharthsinghbaghel.healthyways.R
@@ -39,6 +41,8 @@ class BMICalculatorActivity : AppCompatActivity() {
             ViewModelProvider.AndroidViewModelFactory.getInstance(application)).get(BMIHistoryViewModel::class.java)
 
         btnCalculateUnits.setOnClickListener {
+
+            hideKeyboard(it)
 
             if(validateUnits()){
 
@@ -128,6 +132,8 @@ class BMICalculatorActivity : AppCompatActivity() {
 
 
          private fun calculateBMI(heightValue: Float, weightValue: Float){
+
+
 
              var resultBMI: Double = 0.0
 
@@ -226,5 +232,13 @@ class BMICalculatorActivity : AppCompatActivity() {
         }
 
       return isValid
+    }
+
+
+    private fun hideKeyboard(view: View) {
+        view.apply {
+            val imm = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+            imm.hideSoftInputFromWindow(view.windowToken, 0)
+        }
     }
 }

@@ -1,4 +1,4 @@
-package com.siddharthsinghbaghel.healthyways.tools.bodyFat
+package com.siddharthsinghbaghel.healthyways.tools.goalCalc
 
 
 import android.os.Build
@@ -10,13 +10,13 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.siddharthsinghbaghel.healthyways.R
-import com.siddharthsinghbaghel.healthyways.adapters.FatHistoryAdapter
+import com.siddharthsinghbaghel.healthyways.adapters.GCHistoryAdapter
 import com.siddharthsinghbaghel.healthyways.room.history.HistoryViewModel
-import com.siddharthsinghbaghel.healthyways.room.history.entities.FatCalcHistoryEntity
-import kotlinx.android.synthetic.main.activity_fat_history.*
+import com.siddharthsinghbaghel.healthyways.room.history.entities.GCHistoryEntity
+import kotlinx.android.synthetic.main.activity_gc_history.*
 
 
-class FatHistoryViewActivity : AppCompatActivity(), FatHistoryAdapter.IGCHistoryRVAdapter {
+class GCHistoryViewActivity : AppCompatActivity(), GCHistoryAdapter.IGCHistoryRVAdapter {
 
 
     lateinit var viewModel: HistoryViewModel
@@ -24,34 +24,34 @@ class FatHistoryViewActivity : AppCompatActivity(), FatHistoryAdapter.IGCHistory
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_fat_history)
+        setContentView(R.layout.activity_gc_history)
 
-        setSupportActionBar(toolbar_fat_history_activity)
+        setSupportActionBar(toolbar_gc_history_activity)
 
         val actionBar = supportActionBar
         actionBar?.setDisplayHomeAsUpEnabled(true)
-        actionBar!!.title = "Fat Calculator History"
-        toolbar_fat_history_activity.setNavigationOnClickListener {
+        actionBar!!.title = "Goal Calculator History"
+        toolbar_gc_history_activity.setNavigationOnClickListener {
             onBackPressed()
         }
 
 
-        val fatHistoryRecyclerView = rvAllFatHistory
-        val adapter = FatHistoryAdapter(this,this)
-        fatHistoryRecyclerView.adapter = adapter
-        fatHistoryRecyclerView.layoutManager = LinearLayoutManager(this)
+        val gcHistoryRecyclerView = rvAllGCHistory
+        val adapter = GCHistoryAdapter(this,this)
+        gcHistoryRecyclerView.adapter = adapter
+        gcHistoryRecyclerView.layoutManager = LinearLayoutManager(this)
 
         viewModel = ViewModelProvider(this,
             ViewModelProvider.AndroidViewModelFactory.getInstance(application)).get(HistoryViewModel::class.java)
 
-        viewModel.allFatHistory.observe(this,{
+        viewModel.allGCHistory.observe(this,{
             it?.let{
                 adapter.updateList(it)
             }
             when {
                 it.isEmpty() -> {
-                    fatLaYoga.visibility = View.VISIBLE
-                    tvEmptyFat.visibility = View.VISIBLE
+                    GCLaYoga.visibility = View.VISIBLE
+                    tvEmptyGC.visibility = View.VISIBLE
                 }
             }
         })
@@ -59,9 +59,8 @@ class FatHistoryViewActivity : AppCompatActivity(), FatHistoryAdapter.IGCHistory
 
 
 
-
-    override fun onItemClicked(fatHistory: FatCalcHistoryEntity) {
+    override fun onItemClicked(gcHistory: GCHistoryEntity) {
         Toast.makeText(this, "Deleted", Toast.LENGTH_SHORT).show()
-        viewModel.deleteFatHistory(fatHistory)
+        viewModel.deleteGCHistory(gcHistory)
     }
 }

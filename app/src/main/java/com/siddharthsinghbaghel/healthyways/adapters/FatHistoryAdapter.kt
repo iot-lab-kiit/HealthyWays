@@ -14,7 +14,7 @@ import com.siddharthsinghbaghel.healthyways.room.history.entities.FatCalcHistory
 import kotlinx.android.synthetic.main.fat_history_item.view.*
 import java.util.*
 
-class FatHistoryAdapter(private val context: Context, private val listener: IFatHistoryRVAdapter):
+class FatHistoryAdapter(private val context: Context, private val listener: IGCHistoryRVAdapter):
                         RecyclerView.Adapter<FatHistoryAdapter.FatHistoryViewHolder>() {
 
      private val allFatHistory = ArrayList<FatCalcHistoryEntity>()
@@ -61,7 +61,7 @@ class FatHistoryAdapter(private val context: Context, private val listener: IFat
         notifyDataSetChanged()
     }
 
-interface IFatHistoryRVAdapter{
+interface IGCHistoryRVAdapter{
 
         fun onItemClicked(fatHistory: FatCalcHistoryEntity)
    }

@@ -109,7 +109,26 @@
                    </LinearLayout>
                 </com.google.android.material.textfield.TextInputLayout>
 
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:gravity="center"
+                    android:textSize="16sp"
+                    android:text="Converter needed for weight and/or height ?   " />
 
+                <TextView
+                    android:id="@+id/tvConverterRedirect"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:gravity="center"
+                    android:textSize="12sp"
+                    android:textColor="#0091EA"
+                    android:textStyle="bold"
+                    android:text="Click Here "
+                    android:onClick="openConverterBMR"
+                    />
 
             </LinearLayout>
 

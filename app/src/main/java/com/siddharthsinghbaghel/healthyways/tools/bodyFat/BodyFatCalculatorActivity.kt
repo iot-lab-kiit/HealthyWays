@@ -1,10 +1,12 @@
 package com.siddharthsinghbaghel.healthyways.tools.bodyFat
 
+import android.content.Context
 import android.content.Intent
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.view.inputmethod.InputMethodManager
 import android.widget.AdapterView
 import android.widget.Spinner
 import android.widget.Toast
@@ -62,10 +64,11 @@ class BodyFatCalculatorActivity : AppCompatActivity() {
         setSpinner(spGender)
 
         btnCalculateBFC.setOnClickListener {
-            Toast.makeText(this, " Here btn", Toast.LENGTH_SHORT).show()
-            val result = validateUnits()
-            Toast.makeText(this, " $result", Toast.LENGTH_SHORT).show()
-                 if(result) {
+
+            hideKeyboard(it)
+
+
+                 if(validateUnits()) {
 
                               val ageValue = etMetricBFCAge.text.toString().toFloat()
                               val bmiValue = etMetricBFCBMI.text.toString().toFloat()
@@ -158,19 +161,18 @@ class BodyFatCalculatorActivity : AppCompatActivity() {
 
     private fun validateUnits(): Boolean {
 
-        val isValid: Boolean = true
+        var isValid: Boolean = true
 
-        if(etMetricBFCAge.text!!.isEmpty()){
-            !isValid
-            Toast.makeText(this, " Here Age", Toast.LENGTH_SHORT).show()
+        when {
+            etMetricBFCAge.text.toString().isEmpty() -> {
+                isValid = false
+            }
         }
-        if(etMetricBFCBMI.text!!.isEmpty()){
-            !isValid
-            Toast.makeText(this, " Here BMI", Toast.LENGTH_SHORT).show()
+        if(etMetricBFCBMI.text.toString().isEmpty()){
+            isValid = false
         }
-        if(etMetricBFCWeight.text!!.isEmpty()){
-            !isValid
-            Toast.makeText(this, " Here BMI", Toast.LENGTH_SHORT).show()
+        if(etMetricBFCWeight.text.toString().isEmpty()){
+            isValid = false
         }
         return isValid
     }
@@ -180,7 +182,13 @@ class BodyFatCalculatorActivity : AppCompatActivity() {
         val intent = Intent(this@BodyFatCalculatorActivity, BMICalculatorActivity::class.java)
         startActivity(intent)
 
+    }
 
+    private fun hideKeyboard(view: View) {
+        view.apply {
+            val imm = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+            imm.hideSoftInputFromWindow(view.windowToken, 0)
+        }
     }
 }
 

@@ -13,6 +13,7 @@
         <activity android:name=".tools.oneRM.ORMHistoryViewActivity" />
         <activity android:name=".tools.idealWeight.IdealWeightHistoryActivity" />
         <activity android:name=".tools.bodyFat.FatHistoryViewActivity" />
+        <activity android:name=".tools.goalCalc.GCHistoryViewActivity" />
         <activity
             android:name=".tools.goalCalc.GoalCalculator"
             android:label="@string/title_activity_goal_calculator"
