@@ -35,6 +35,7 @@ class MainActivityBottomNav : AppCompatActivity() {
             when(it.itemId){
                 R.id.tools -> replaceFragments(toolsFragment)
                 R.id.sevenMinExercises -> replaceFragments(exerciseFragment)
+                R.id.history -> replaceFragments(historyFragment)
 
             }
             true

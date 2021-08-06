@@ -10,50 +10,52 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
+        android:layout_gravity="center"
        >
 
 
         <GridLayout
             android:id="@+id/grid_view"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_gravity="center"
-            android:layout_marginTop="24dp"
-            android:columnCount="1"
+            android:columnCount="2"
             android:columnOrderPreserved="false"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/cvBmi"
-                android:layout_width="match_parent"
-                android:layout_height="150dp"
+                android:layout_width="158dp"
+                android:layout_height="158dp"
+                android:layout_rowWeight="1"
                 android:layout_margin="10dp"
+                android:backgroundTint="#00BFA5"
                 app:cardCornerRadius="12dp"
-               android:layout_rowWeight="1"
                 app:cardElevation="10dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="@drawable/item_color_accent_border_ripple_effect_tools"
                     android:elevation="5dp"
                     android:gravity="center"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:background="?attr/selectableItemBackground">
 
                     <ImageView
-                        android:layout_width="@dimen/tools_icon_width"
-                        android:layout_height="@dimen/tools_icon_height"
-                        android:src="@drawable/ic_bmi" />
+                        android:layout_width="85dp"
+                        android:layout_height="85dp"
+                        android:src="@drawable/ic_bmi"
+                        android:contentDescription="BMI" />
 
                     <TextView
                         android:id="@+id/tv_bmi"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="BMI"
-                        android:textColor="@color/black"
+                        android:textStyle="bold"
+                        android:textColor="@color/white"
                         android:textSize="18sp" />
 
                 </LinearLayout>
@@ -61,16 +63,17 @@
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/cvIdealWeight"
-                android:layout_width="match_parent"
+                android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:layout_margin="10dp"
+                android:backgroundTint="#2962FF"
                 app:cardCornerRadius="12dp"
                 app:cardElevation="10dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="@drawable/item_color_accent_border_ripple_effect_tools"
+                    android:background="?attr/selectableItemBackground"
                     android:elevation="5dp"
                     android:gravity="center"
                     android:orientation="vertical">
@@ -79,27 +82,30 @@
                         android:layout_width="@dimen/tools_icon_width"
                         android:layout_height="@dimen/tools_icon_height"
                         android:src="@drawable/ic_exercise1" />
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Ideal Weight"
-                        android:textColor="@color/black"
+                        android:textColor="@color/white"
                         android:textSize="18sp"
-                        android:textStyle="italic" />
+                        android:textStyle="bold" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
+
             <androidx.cardview.widget.CardView
                 android:id="@+id/cvFatCalc"
-                android:layout_width="match_parent"
+                android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:layout_margin="10dp"
                 app:cardCornerRadius="12dp"
+                android:backgroundTint="#FF6D00"
                 app:cardElevation="10dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="@drawable/item_color_accent_border_ripple_effect_tools"
+                    android:background="?attr/selectableItemBackground"
                     android:elevation="5dp"
                     android:gravity="center"
                     android:orientation="vertical">
@@ -108,27 +114,30 @@
                         android:layout_width="@dimen/tools_icon_width"
                         android:layout_height="@dimen/tools_icon_height"
                         android:src="@drawable/ic_fat" />
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Fat Calc"
-                        android:textColor="@color/black"
+                        android:textColor="#FFFFFF"
                         android:textSize="18sp"
-                        android:textStyle="italic" />
+                        android:textStyle="bold" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
+
             <androidx.cardview.widget.CardView
                 android:id="@+id/cvOneRm"
-                android:layout_width="match_parent"
-                android:layout_height="150dp"
+                android:layout_width="158dp"
+                android:layout_height="158dp"
                 android:layout_margin="10dp"
+                android:backgroundTint="#12B154"
                 app:cardCornerRadius="12dp"
                 app:cardElevation="10dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="@drawable/item_color_accent_border_ripple_effect_tools"
+                    android:background="?attr/selectableItemBackground"
                     android:elevation="5dp"
                     android:gravity="center"
                     android:orientation="vertical">
@@ -136,30 +145,32 @@
                     <ImageView
                         android:layout_width="@dimen/tools_icon_width"
                         android:layout_height="@dimen/tools_icon_height"
-                        android:src="@drawable/ic_1rm" />
+                        android:src="@drawable/ic_deadlift" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="1RM Calc"
-                        android:textColor="@color/black"
+                        android:textColor="@color/white"
                         android:textSize="18sp"
-                        android:textStyle="italic" />
+                        android:textStyle="bold" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
+
             <androidx.cardview.widget.CardView
                 android:id="@+id/cvCalorieCalc"
-                android:layout_width="match_parent"
-                android:layout_height="150dp"
+                android:layout_width="158dp"
+                android:layout_height="158dp"
+                android:backgroundTint="#FFAB00"
+                android:layout_rowWeight="1"
                 android:layout_margin="10dp"
                 app:cardCornerRadius="12dp"
-                android:layout_rowWeight="1"
                 app:cardElevation="10dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="@drawable/item_color_accent_border_ripple_effect_tools"
+                    android:background="?attr/selectableItemBackground"
                     android:elevation="5dp"
                     android:gravity="center"
                     android:orientation="vertical">
@@ -174,23 +185,25 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="BMR &amp; TDEE"
-                        android:textColor="@color/black"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
                         android:textSize="18sp" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/cvGoalCalc"
-                android:layout_width="match_parent"
+                android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:layout_margin="10dp"
                 app:cardCornerRadius="12dp"
+                android:backgroundTint="#D5538D"
                 app:cardElevation="10dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="@drawable/item_color_accent_border_ripple_effect_tools"
+                    android:background="?attr/selectableItemBackground"
                     android:elevation="10dp"
                     android:gravity="center"
                     android:orientation="vertical">
@@ -199,13 +212,14 @@
                         android:layout_width="@dimen/tools_icon_width"
                         android:layout_height="@dimen/tools_icon_height"
                         android:src="@drawable/ic_goal" />
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Goal Calc"
-                        android:textColor="@color/black"
+                        android:textColor="@color/white"
                         android:textSize="18sp"
-                        android:textStyle="italic" />
+                        android:textStyle="bold" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
         </GridLayout>
