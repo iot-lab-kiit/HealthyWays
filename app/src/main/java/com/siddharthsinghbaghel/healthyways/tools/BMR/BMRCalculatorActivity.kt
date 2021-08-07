@@ -4,7 +4,6 @@ import android.content.Context
 import android.content.Intent
 import android.net.Uri
 import android.os.Build
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.view.inputmethod.InputMethodManager
@@ -13,12 +12,11 @@ import android.widget.ScrollView
 import android.widget.Spinner
 import android.widget.Toast
 import androidx.annotation.RequiresApi
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import com.siddharthsinghbaghel.healthyways.R
 import com.siddharthsinghbaghel.healthyways.room.history.HistoryViewModel
 import com.siddharthsinghbaghel.healthyways.room.history.entities.BMRCalcHistoryEntity
-import com.siddharthsinghbaghel.healthyways.room.iWHistory.IWHistoryEntity
-import com.siddharthsinghbaghel.healthyways.room.iWHistory.IWHistoryViewModel
 import kotlinx.android.synthetic.main.activity_b_m_r_calculator.*
 import java.math.BigDecimal
 import java.math.RoundingMode

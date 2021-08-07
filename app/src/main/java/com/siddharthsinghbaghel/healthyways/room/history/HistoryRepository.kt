@@ -3,10 +3,7 @@ package com.siddharthsinghbaghel.healthyways.room.history
 
 import androidx.annotation.WorkerThread
 import androidx.lifecycle.LiveData
-import com.siddharthsinghbaghel.healthyways.room.history.entities.BMRCalcHistoryEntity
-import com.siddharthsinghbaghel.healthyways.room.history.entities.FatCalcHistoryEntity
-import com.siddharthsinghbaghel.healthyways.room.history.entities.GCHistoryEntity
-import com.siddharthsinghbaghel.healthyways.room.history.entities.OneRMCalcHistoryEntity
+import com.siddharthsinghbaghel.healthyways.room.history.entities.*
 
 class HistoryRepository(private val historyDao : HistoryDao) {
 
@@ -18,6 +15,8 @@ class HistoryRepository(private val historyDao : HistoryDao) {
     val allORMHistory: LiveData<List<OneRMCalcHistoryEntity>> = historyDao.getAllORMHistory()
     val allBMRHistory: LiveData<List<BMRCalcHistoryEntity>> = historyDao.getAllBMRHistory()
     val allGCHistory: LiveData<List<GCHistoryEntity>> = historyDao.getAllGCHistory()
+    val allBMIHistory: LiveData<List<BMIHistoryEntity>> = historyDao.getAllBMIHistory()
+    val allIWHistory: LiveData<List<IWHistoryEntity>> = historyDao.getAllIWHistory()
 
     // By default Room runs suspend queries off the main thread, therefore, we don't need to
     // implement anything else to ensure we're not doing long running database work
@@ -47,6 +46,18 @@ class HistoryRepository(private val historyDao : HistoryDao) {
     }
     suspend fun deleteGC(gcHistory: GCHistoryEntity) {
         historyDao.deleteGCHistory(gcHistory)
+    }
+    suspend fun insertBMI(bmiHistory: BMIHistoryEntity) {
+        historyDao.insertBmiHistory(bmiHistory)
+    }
+    suspend fun deleteBMI(bmiHistory: BMIHistoryEntity) {
+        historyDao.deleteBmiHistory(bmiHistory)
+    }
+    suspend fun insertIW(iwHistory: IWHistoryEntity) {
+        historyDao.insertIwHistory(iwHistory)
+    }
+    suspend fun deleteIW(iwHistory: IWHistoryEntity) {
+        historyDao.deleteIwHistory(iwHistory)
     }
 
 

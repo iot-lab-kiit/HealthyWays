@@ -15,10 +15,9 @@ import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import com.siddharthsinghbaghel.healthyways.R
-import com.siddharthsinghbaghel.healthyways.room.iWHistory.IWHistoryEntity
-import com.siddharthsinghbaghel.healthyways.room.iWHistory.IWHistoryViewModel
+import com.siddharthsinghbaghel.healthyways.room.history.HistoryViewModel
+import com.siddharthsinghbaghel.healthyways.room.history.entities.IWHistoryEntity
 import kotlinx.android.synthetic.main.activity_ideal_weight.*
-import kotlinx.android.synthetic.main.iw_history_item.*
 import java.math.BigDecimal
 import java.math.RoundingMode
 import java.time.LocalDateTime
@@ -27,7 +26,7 @@ import java.time.format.DateTimeFormatter
 class IdealWeightActivity : AppCompatActivity() {
 
 
-    lateinit var viewModel: IWHistoryViewModel
+    lateinit var viewModel: HistoryViewModel
     var mGender = 0;
 
     @RequiresApi(Build.VERSION_CODES.O)
@@ -47,7 +46,7 @@ class IdealWeightActivity : AppCompatActivity() {
 
         viewModel = ViewModelProvider(this,
             ViewModelProvider.AndroidViewModelFactory.getInstance(application)).get(
-            IWHistoryViewModel::class.java)
+            HistoryViewModel::class.java)
 
         setSpinner(spGenderIw)
 

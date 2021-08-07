@@ -4,10 +4,7 @@ import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.viewModelScope
-import com.siddharthsinghbaghel.healthyways.room.history.entities.BMRCalcHistoryEntity
-import com.siddharthsinghbaghel.healthyways.room.history.entities.FatCalcHistoryEntity
-import com.siddharthsinghbaghel.healthyways.room.history.entities.GCHistoryEntity
-import com.siddharthsinghbaghel.healthyways.room.history.entities.OneRMCalcHistoryEntity
+import com.siddharthsinghbaghel.healthyways.room.history.entities.*
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
@@ -18,6 +15,9 @@ class HistoryViewModel(application: Application): AndroidViewModel(application) 
     val allORMHistory: LiveData<List<OneRMCalcHistoryEntity>>
     val allBMRHistory: LiveData<List<BMRCalcHistoryEntity>>
     val allGCHistory: LiveData<List<GCHistoryEntity>>
+    val allBmiHistory: LiveData<List<BMIHistoryEntity>>
+    val allIwHistory: LiveData<List<IWHistoryEntity>>
+
     init{
         val dao = HistoryDatabase.getDatabase(application).getHistoryDao()
         historyRepository = HistoryRepository(dao)
@@ -25,6 +25,8 @@ class HistoryViewModel(application: Application): AndroidViewModel(application) 
         allORMHistory = historyRepository.allORMHistory
         allBMRHistory = historyRepository.allBMRHistory
         allGCHistory = historyRepository.allGCHistory
+        allBmiHistory = historyRepository.allBMIHistory
+        allIwHistory = historyRepository.allIWHistory
     }
 
     /*viewModelScope.launch(Dispatchers.IO) - coroutines used to avoid async task*/
@@ -51,6 +53,19 @@ class HistoryViewModel(application: Application): AndroidViewModel(application) 
     }
     fun insertGCHistory(gcHistory :GCHistoryEntity) = viewModelScope.launch(Dispatchers.IO) {
         historyRepository.insertGC(gcHistory)
+    }
+    fun deleteBMIHistory(bmiHistory : BMIHistoryEntity) = viewModelScope.launch(Dispatchers.IO) {
+        historyRepository.deleteBMI(bmiHistory)
+    }
+    fun insertBMIHistory(bmiHistory : BMIHistoryEntity) = viewModelScope.launch(Dispatchers.IO) {
+        historyRepository.insertBMI(bmiHistory)
+    }
+    fun deleteIWHistory(iwHistory : IWHistoryEntity) = viewModelScope.launch(Dispatchers.IO) {
+        historyRepository.deleteIW(iwHistory)
+    }
+
+    fun insertIWHistory(iwHistory : IWHistoryEntity) = viewModelScope.launch(Dispatchers.IO) {
+        historyRepository.insertIW(iwHistory)
     }
 
 }

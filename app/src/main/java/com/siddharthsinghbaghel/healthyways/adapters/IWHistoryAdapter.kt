@@ -10,7 +10,7 @@ import android.widget.TextView
 import androidx.annotation.RequiresApi
 import androidx.recyclerview.widget.RecyclerView
 import com.siddharthsinghbaghel.healthyways.R
-import com.siddharthsinghbaghel.healthyways.room.iWHistory.IWHistoryEntity
+import com.siddharthsinghbaghel.healthyways.room.history.entities.IWHistoryEntity
 import kotlinx.android.synthetic.main.iw_history_item.view.*
 import java.util.*
 

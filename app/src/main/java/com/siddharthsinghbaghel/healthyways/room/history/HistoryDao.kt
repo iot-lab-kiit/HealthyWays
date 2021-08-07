@@ -2,10 +2,7 @@ package com.siddharthsinghbaghel.healthyways.room.history
 
 import androidx.lifecycle.LiveData
 import androidx.room.*
-import com.siddharthsinghbaghel.healthyways.room.history.entities.BMRCalcHistoryEntity
-import com.siddharthsinghbaghel.healthyways.room.history.entities.FatCalcHistoryEntity
-import com.siddharthsinghbaghel.healthyways.room.history.entities.GCHistoryEntity
-import com.siddharthsinghbaghel.healthyways.room.history.entities.OneRMCalcHistoryEntity
+import com.siddharthsinghbaghel.healthyways.room.history.entities.*
 
 
 @Dao
@@ -49,5 +46,23 @@ interface HistoryDao {
     @Query("select * from GCCalcHistory")
     fun getAllGCHistory(): LiveData<List<GCHistoryEntity>>
 /* Dao for BMR History */
+
+/* Dao for BMI History */
+    @Insert(onConflict = OnConflictStrategy.IGNORE)
+    suspend fun insertBmiHistory(history: BMIHistoryEntity)
+    @Delete
+    suspend fun deleteBmiHistory(history: BMIHistoryEntity)
+    @Query("select * from BMIHistory")
+    fun getAllBMIHistory(): LiveData<List<BMIHistoryEntity>>
+/* Dao for BMI History */
+
+/* Dao for IW History */
+    @Insert(onConflict = OnConflictStrategy.IGNORE)
+    suspend fun insertIwHistory(history: IWHistoryEntity)
+    @Delete
+    suspend fun deleteIwHistory(history: IWHistoryEntity)
+    @Query("select * from IwHistory")
+    fun getAllIWHistory(): LiveData<List<IWHistoryEntity>>
+/* Dao for IW History */
 
 }

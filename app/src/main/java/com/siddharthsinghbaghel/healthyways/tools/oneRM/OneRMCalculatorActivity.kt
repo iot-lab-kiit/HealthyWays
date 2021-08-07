@@ -16,11 +16,8 @@ import androidx.lifecycle.ViewModelProvider
 import com.siddharthsinghbaghel.healthyways.R
 import com.siddharthsinghbaghel.healthyways.room.history.HistoryViewModel
 import com.siddharthsinghbaghel.healthyways.room.history.entities.OneRMCalcHistoryEntity
-import com.siddharthsinghbaghel.healthyways.room.iWHistory.IWHistoryEntity
-import com.siddharthsinghbaghel.healthyways.room.iWHistory.IWHistoryViewModel
 import kotlinx.android.synthetic.main.activity_bmi.*
 import kotlinx.android.synthetic.main.activity_one_r_m_calculater.*
-import kotlinx.android.synthetic.main.activity_one_r_m_calculater.toolbar_oneRM_activity
 import java.math.BigDecimal
 import java.math.RoundingMode
 import java.time.LocalDateTime

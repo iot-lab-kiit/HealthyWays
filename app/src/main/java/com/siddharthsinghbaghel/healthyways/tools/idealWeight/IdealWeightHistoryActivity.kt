@@ -9,17 +9,17 @@ import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.siddharthsinghbaghel.healthyways.adapters.IWHistoryAdapter
 import com.siddharthsinghbaghel.healthyways.R
-import com.siddharthsinghbaghel.healthyways.room.iWHistory.IWHistoryEntity
-import com.siddharthsinghbaghel.healthyways.room.iWHistory.IWHistoryViewModel
+import com.siddharthsinghbaghel.healthyways.adapters.IWHistoryAdapter
+import com.siddharthsinghbaghel.healthyways.room.history.HistoryViewModel
+import com.siddharthsinghbaghel.healthyways.room.history.entities.IWHistoryEntity
 import kotlinx.android.synthetic.main.activity_iw_history.*
 
 
 class IdealWeightHistoryActivity : AppCompatActivity(), IWHistoryAdapter.IIWHistoryRVAdapter {
 
 
-    lateinit var viewModel: IWHistoryViewModel
+    lateinit var viewModel: HistoryViewModel
 
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -42,7 +42,7 @@ class IdealWeightHistoryActivity : AppCompatActivity(), IWHistoryAdapter.IIWHist
         iwHistoryRecyclerView.layoutManager = LinearLayoutManager(this)
 
         viewModel = ViewModelProvider(this,
-            ViewModelProvider.AndroidViewModelFactory.getInstance(application)).get(IWHistoryViewModel::class.java)
+            ViewModelProvider.AndroidViewModelFactory.getInstance(application)).get(HistoryViewModel::class.java)
 
         viewModel.allIwHistory.observe(this,{
             it?.let{

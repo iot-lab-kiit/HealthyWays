@@ -5,12 +5,11 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import com.siddharthsinghbaghel.healthyways.room.history.entities.BMRCalcHistoryEntity
-import com.siddharthsinghbaghel.healthyways.room.history.entities.FatCalcHistoryEntity
-import com.siddharthsinghbaghel.healthyways.room.history.entities.GCHistoryEntity
-import com.siddharthsinghbaghel.healthyways.room.history.entities.OneRMCalcHistoryEntity
+import com.siddharthsinghbaghel.healthyways.room.history.entities.*
 
-@Database(entities = [FatCalcHistoryEntity::class,
+@Database(entities = [BMIHistoryEntity::class,
+                      IWHistoryEntity::class,
+                      FatCalcHistoryEntity::class,
                       OneRMCalcHistoryEntity::class,
                       BMRCalcHistoryEntity::class,
                       GCHistoryEntity::class], version = 1, exportSchema = false)
