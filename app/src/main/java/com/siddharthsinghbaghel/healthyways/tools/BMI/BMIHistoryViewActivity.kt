@@ -1,20 +1,20 @@
 package com.siddharthsinghbaghel.healthyways.tools.BMI
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.siddharthsinghbaghel.healthyways.adapters.BMIHistoryAdapter
 import com.siddharthsinghbaghel.healthyways.R
-import com.siddharthsinghbaghel.healthyways.room.bMIHistory.BMIHistoryEntity
-import com.siddharthsinghbaghel.healthyways.room.bMIHistory.BMIHistoryViewModel
+import com.siddharthsinghbaghel.healthyways.adapters.BMIHistoryAdapter
+import com.siddharthsinghbaghel.healthyways.room.history.HistoryViewModel
+import com.siddharthsinghbaghel.healthyways.room.history.entities.BMIHistoryEntity
 import kotlinx.android.synthetic.main.activity_bmi_history.*
 
 class BMIHistoryViewActivity : AppCompatActivity(), BMIHistoryAdapter.IBMIHistoryRVAdapter {
 
-    lateinit var viewModel: BMIHistoryViewModel
+    lateinit var viewModel: HistoryViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,7 +36,7 @@ class BMIHistoryViewActivity : AppCompatActivity(), BMIHistoryAdapter.IBMIHistor
         bmiHistoryRecyclerView.layoutManager = LinearLayoutManager(this)
 
         viewModel = ViewModelProvider(this,
-            ViewModelProvider.AndroidViewModelFactory.getInstance(application)).get(BMIHistoryViewModel::class.java)
+            ViewModelProvider.AndroidViewModelFactory.getInstance(application)).get(HistoryViewModel::class.java)
 
         viewModel.allBmiHistory.observe(this,{
             it?.let{

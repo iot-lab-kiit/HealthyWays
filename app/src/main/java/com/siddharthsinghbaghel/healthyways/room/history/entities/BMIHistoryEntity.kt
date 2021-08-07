@@ -1,4 +1,4 @@
-package com.siddharthsinghbaghel.healthyways.room.bMIHistory
+package com.siddharthsinghbaghel.healthyways.room.history.entities
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity

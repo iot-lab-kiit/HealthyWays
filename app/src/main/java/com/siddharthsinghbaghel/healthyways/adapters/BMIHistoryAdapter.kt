@@ -8,9 +8,9 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.siddharthsinghbaghel.healthyways.R
-import com.siddharthsinghbaghel.healthyways.room.bMIHistory.BMIHistoryEntity
+import com.siddharthsinghbaghel.healthyways.room.history.entities.BMIHistoryEntity
 import kotlinx.android.synthetic.main.bmi_history_item.view.*
-import java.util.ArrayList
+import java.util.*
 
 class BMIHistoryAdapter(private val context: Context, private val listener: IBMIHistoryRVAdapter):
                         RecyclerView.Adapter<BMIHistoryAdapter.BMIHistoryViewHolder>() {

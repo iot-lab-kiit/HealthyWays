@@ -1,15 +1,15 @@
 package com.siddharthsinghbaghel.healthyways.tools.BMI
 
 import android.content.Context
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.view.inputmethod.InputMethodManager
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import com.siddharthsinghbaghel.healthyways.R
-import com.siddharthsinghbaghel.healthyways.room.bMIHistory.BMIHistoryEntity
-import com.siddharthsinghbaghel.healthyways.room.bMIHistory.BMIHistoryViewModel
+import com.siddharthsinghbaghel.healthyways.room.history.HistoryViewModel
+import com.siddharthsinghbaghel.healthyways.room.history.entities.BMIHistoryEntity
 import kotlinx.android.synthetic.main.activity_bmi.*
 import java.math.BigDecimal
 import java.math.RoundingMode
@@ -18,7 +18,7 @@ import kotlin.math.pow
 class BMICalculatorActivity : AppCompatActivity() {
 
 
-    lateinit var viewModel: BMIHistoryViewModel
+    lateinit var viewModel: HistoryViewModel
     val METRIC_UNITS_VIEW = "METRIC_UNITS_VIEW"
     val US_UNITS_VIEW = "US_UNITS_VIEW"
     var currentVisibleView: String = "METRIC_UNITS_VIEW"
@@ -38,7 +38,7 @@ class BMICalculatorActivity : AppCompatActivity() {
         }
 
         viewModel = ViewModelProvider(this,
-            ViewModelProvider.AndroidViewModelFactory.getInstance(application)).get(BMIHistoryViewModel::class.java)
+            ViewModelProvider.AndroidViewModelFactory.getInstance(application)).get(HistoryViewModel::class.java)
 
         btnCalculateUnits.setOnClickListener {
 
