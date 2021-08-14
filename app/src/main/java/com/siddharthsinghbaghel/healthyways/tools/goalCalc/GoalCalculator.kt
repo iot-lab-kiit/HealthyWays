@@ -5,23 +5,20 @@ import android.content.Intent
 import android.graphics.Color
 import android.net.Uri
 import android.os.Build
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.view.inputmethod.InputMethodManager
 import android.widget.ScrollView
 import android.widget.Toast
 import androidx.annotation.RequiresApi
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import com.google.android.material.snackbar.Snackbar
 import com.siddharthsinghbaghel.healthyways.R
 import com.siddharthsinghbaghel.healthyways.room.history.HistoryViewModel
-import com.siddharthsinghbaghel.healthyways.room.history.entities.FatCalcHistoryEntity
 import com.siddharthsinghbaghel.healthyways.room.history.entities.GCHistoryEntity
 import com.siddharthsinghbaghel.healthyways.tools.BMR.BMRCalculatorActivity
 import kotlinx.android.synthetic.main.activity_goal_calculator.*
-import kotlinx.android.synthetic.main.activity_goal_calculator.svIw
-import kotlinx.android.synthetic.main.activity_ideal_weight.*
 import java.math.BigDecimal
 import java.math.RoundingMode
 import java.time.LocalDateTime
@@ -71,7 +68,7 @@ class GoalCalculator : AppCompatActivity() {
 
                 calculateGC(currentWeight,targetWeight,tee,weeks,it)
             }else{
-                Toast.makeText(this, "Invalid Entries", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "❌ Please enter valid values !!", Toast.LENGTH_SHORT).show()
             }
 
         }
@@ -84,14 +81,10 @@ class GoalCalculator : AppCompatActivity() {
 
             currentWeight > targetWeight -> {
 
-                Toast.makeText(this, "Here", Toast.LENGTH_SHORT).show()
-
                 val totalWeightLoss = currentWeight - targetWeight
-                Toast.makeText(this, "$totalWeightLoss", Toast.LENGTH_SHORT).show()
                 val totalCaloriesToLoose = totalWeightLoss * 7700
                 val totalDays = weeks * 7
                 val caloriesLoosePerDay = totalCaloriesToLoose / totalDays
-                Toast.makeText(this, "$caloriesLoosePerDay", Toast.LENGTH_SHORT).show()
                 val caloriesLoosePerDayFormatted = BigDecimal(caloriesLoosePerDay.toDouble()).setScale(2, RoundingMode.HALF_EVEN).toString()
                 if (caloriesLoosePerDayFormatted.toFloat() > 1000 || caloriesLoosePerDayFormatted.toFloat() < 0) {
                     val snackBar = Snackbar.make(
@@ -100,7 +93,6 @@ class GoalCalculator : AppCompatActivity() {
                     ).setAction("Action", null)
                     snackBar.setActionTextColor(Color.BLUE)
                     snackBar.show()
-                    Toast.makeText(this, "impossible", Toast.LENGTH_SHORT).show()
 
                     llResultGC.visibility = View.GONE
                 }else{
@@ -120,7 +112,7 @@ class GoalCalculator : AppCompatActivity() {
                     val x = currentDateTime.format(DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm")).toString()
 
                     viewModel.insertGCHistory(GCHistoryEntity(currentWeight.toString(),targetWeight.toString(),weeks.toString(),x,goalCalorieResult.toString()))
-                    Toast.makeText(this, "$goalCalorieResult Inserted", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, "⛳ $goalCalorieResult saved in history !!", Toast.LENGTH_SHORT).show()
                 }
 
 
@@ -148,7 +140,6 @@ class GoalCalculator : AppCompatActivity() {
                 }else{
 
                     llResultGC.visibility = View.VISIBLE
-                    Toast.makeText(this, "$tee  $caloriesGainPerDay", Toast.LENGTH_SHORT).show()
                      val goalCalorieResult = tee + caloriesGainPerDayFormatted.toFloat()
                      val surplusCaloriesValue = caloriesGainPerDayFormatted.toFloat()
 
@@ -160,7 +151,7 @@ class GoalCalculator : AppCompatActivity() {
                     val x = currentDateTime.format(DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm")).toString()
 
                     viewModel.insertGCHistory(GCHistoryEntity(currentWeight.toString(),targetWeight.toString(),weeks.toString(),x,goalCalorieResult.toString()))
-                    Toast.makeText(this, "$goalCalorieResult Inserted", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, "⛳ $goalCalorieResult saved in history !!", Toast.LENGTH_SHORT).show()
 
                 }
 

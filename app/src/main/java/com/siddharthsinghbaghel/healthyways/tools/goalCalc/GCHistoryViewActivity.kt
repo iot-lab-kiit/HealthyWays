@@ -8,6 +8,7 @@ import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.observe
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.siddharthsinghbaghel.healthyways.R
 import com.siddharthsinghbaghel.healthyways.adapters.GCHistoryAdapter
@@ -44,8 +45,8 @@ class GCHistoryViewActivity : AppCompatActivity(), GCHistoryAdapter.IGCHistoryRV
         viewModel = ViewModelProvider(this,
             ViewModelProvider.AndroidViewModelFactory.getInstance(application)).get(HistoryViewModel::class.java)
 
-        viewModel.allGCHistory.observe(this,{
-            it?.let{
+        viewModel.allGCHistory.observe(this) {
+            it.let{
                 adapter.updateList(it)
             }
             when {
@@ -54,13 +55,13 @@ class GCHistoryViewActivity : AppCompatActivity(), GCHistoryAdapter.IGCHistoryRV
                     tvEmptyGC.visibility = View.VISIBLE
                 }
             }
-        })
+        }
     }
 
 
 
     override fun onItemClicked(gcHistory: GCHistoryEntity) {
-        Toast.makeText(this, "Deleted", Toast.LENGTH_SHORT).show()
+        Toast.makeText(this, "✅ Deleted Successfully", Toast.LENGTH_SHORT).show()
         viewModel.deleteGCHistory(gcHistory)
     }
 }
