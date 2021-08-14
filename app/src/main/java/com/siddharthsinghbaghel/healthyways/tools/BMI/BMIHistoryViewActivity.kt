@@ -5,6 +5,7 @@ import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.observe
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.siddharthsinghbaghel.healthyways.R
 import com.siddharthsinghbaghel.healthyways.adapters.BMIHistoryAdapter
@@ -38,8 +39,8 @@ class BMIHistoryViewActivity : AppCompatActivity(), BMIHistoryAdapter.IBMIHistor
         viewModel = ViewModelProvider(this,
             ViewModelProvider.AndroidViewModelFactory.getInstance(application)).get(HistoryViewModel::class.java)
 
-        viewModel.allBmiHistory.observe(this,{
-            it?.let{
+        viewModel.allBmiHistory.observe(this) {
+            it.let{
                 adapter.updateList(it)
             }
             when {
@@ -48,11 +49,11 @@ class BMIHistoryViewActivity : AppCompatActivity(), BMIHistoryAdapter.IBMIHistor
                     tvEmpty.visibility = View.VISIBLE
                 }
             }
-        })
+        }
     }
 
     override fun onItemClicked(bmiHistory: BMIHistoryEntity) {
-        Toast.makeText(this, "onItemClicked", Toast.LENGTH_SHORT).show()
+        Toast.makeText(this, "✅ Deleted Successfully", Toast.LENGTH_SHORT).show()
         viewModel.deleteBMIHistory(bmiHistory)
     }
 }

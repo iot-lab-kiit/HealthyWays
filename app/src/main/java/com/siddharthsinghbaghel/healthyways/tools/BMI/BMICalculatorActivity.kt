@@ -65,7 +65,7 @@ class BMICalculatorActivity : AppCompatActivity() {
             }else{
                 Toast.makeText(
                     this,
-                    "Please Enter valid values !!",
+                    "❌ Please Enter valid values !!",
                     Toast.LENGTH_SHORT
                 ).show()
             }
@@ -190,9 +190,9 @@ class BMICalculatorActivity : AppCompatActivity() {
 
              if(bmiValue.isNotEmpty() && bmiLabel.isNotEmpty()) {
                  viewModel.insertBMIHistory(BMIHistoryEntity(bmiValue,bmiLabel,bmiWeight,bmiHeight))
-                 Toast.makeText(this, "$bmiValue Inserted", Toast.LENGTH_SHORT).show()
+                 Toast.makeText(this, "⛳ $bmiValue saved in History ", Toast.LENGTH_SHORT).show()
              }else{
-                 Toast.makeText(this, "Invalid Entry", Toast.LENGTH_SHORT).show()
+                 Toast.makeText(this, "❌ Invalid Entry", Toast.LENGTH_SHORT).show()
              }
 
          }
