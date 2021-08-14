@@ -24,7 +24,7 @@ class MainActivityBottomNav : AppCompatActivity() {
         setSupportActionBar(toolbar_bottom_nav)
 
         val actionBar = supportActionBar
-        actionBar!!.title = "🌟  Healthy Ways"
+        actionBar!!.title = " Healthy Ways"
 
 
 
