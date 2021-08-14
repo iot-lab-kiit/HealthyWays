@@ -8,6 +8,7 @@ import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.observe
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.siddharthsinghbaghel.healthyways.R
 import com.siddharthsinghbaghel.healthyways.adapters.FatHistoryAdapter
@@ -44,8 +45,8 @@ class FatHistoryViewActivity : AppCompatActivity(), FatHistoryAdapter.IGCHistory
         viewModel = ViewModelProvider(this,
             ViewModelProvider.AndroidViewModelFactory.getInstance(application)).get(HistoryViewModel::class.java)
 
-        viewModel.allFatHistory.observe(this,{
-            it?.let{
+        viewModel.allFatHistory.observe(this) {
+            it.let{
                 adapter.updateList(it)
             }
             when {
@@ -54,14 +55,14 @@ class FatHistoryViewActivity : AppCompatActivity(), FatHistoryAdapter.IGCHistory
                     tvEmptyFat.visibility = View.VISIBLE
                 }
             }
-        })
+        }
     }
 
 
 
 
     override fun onItemClicked(fatHistory: FatCalcHistoryEntity) {
-        Toast.makeText(this, "Deleted", Toast.LENGTH_SHORT).show()
+        Toast.makeText(this, "✅ Deleted Successfully", Toast.LENGTH_SHORT).show()
         viewModel.deleteFatHistory(fatHistory)
     }
 }

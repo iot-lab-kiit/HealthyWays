@@ -3,24 +3,21 @@
 import android.app.Dialog
 import android.content.Intent
 import android.media.MediaPlayer
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.CountDownTimer
 import android.speech.tts.TextToSpeech
 import android.view.View
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.siddharthsinghbaghel.healthyways.Constants
 import com.siddharthsinghbaghel.healthyways.R
-import com.siddharthsinghbaghel.healthyways.navFragments.ExerciseFragment
 import kotlinx.android.synthetic.main.activity_exercise.*
-import kotlinx.android.synthetic.main.activity_exercise_finish.*
 import kotlinx.android.synthetic.main.dialog_custom_back_conformation.*
 import kotlinx.android.synthetic.main.item_exercise_status.*
 import java.util.*
-import kotlin.collections.ArrayList
 
-class ExerciseActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
+  class ExerciseActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
 
 /* TextToSpeech.OnInitListener extended this to use the text to speech feature  */
     private var restTimer: CountDownTimer? = null
@@ -194,23 +191,17 @@ class ExerciseActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
         if(status == TextToSpeech.SUCCESS)
             {
                 val result = tts!!.setLanguage(Locale.US)
-                Toast.makeText(
-                        this@ExerciseActivity,
-                        "TTS Fine.",
-                        Toast.LENGTH_SHORT
-                ).show()
-
                 if(result == TextToSpeech.LANG_MISSING_DATA || result == TextToSpeech.LANG_NOT_SUPPORTED ){
                     Toast.makeText(
                             this@ExerciseActivity,
-                            "Missing.",
+                            "Missing Language",
                             Toast.LENGTH_SHORT
                     ).show()
                 }
         }else{
             Toast.makeText(
                     this@ExerciseActivity,
-                    "Error in TTS",
+                    "Error in Text To Speech",
                     Toast.LENGTH_SHORT
             ).show()
         }

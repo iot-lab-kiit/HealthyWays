@@ -76,7 +76,7 @@ class BodyFatCalculatorActivity : AppCompatActivity() {
 
                             calculateBF(ageValue,bmiValue,weightValue)
                   }else{
-                     Toast.makeText(this, "Invalid Entries", Toast.LENGTH_SHORT).show()
+                     Toast.makeText(this, "❌ Please enter valid values !!", Toast.LENGTH_SHORT).show()
                   }
 
               }
@@ -100,7 +100,7 @@ class BodyFatCalculatorActivity : AppCompatActivity() {
                 val x = currentDateTime.format(DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm")).toString()
 
                 viewModel.insertFatHistory(FatCalcHistoryEntity(resultBFValue,massFatValue,ageValue.toString(),bmiValue.toString(),x))
-                Toast.makeText(this, "$resultBFValue Inserted", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "⛳ $resultBFValue saved to history !!", Toast.LENGTH_SHORT).show()
 
             }
             1 -> {
@@ -117,7 +117,7 @@ class BodyFatCalculatorActivity : AppCompatActivity() {
                 val x = currentDateTime.format(DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm")).toString()
 
                 viewModel.insertFatHistory(FatCalcHistoryEntity(resultBFValue,massFatValue,ageValue.toString(),bmiValue.toString(),x))
-                Toast.makeText(this, "$resultBFValue Inserted", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "⛳ $resultBFValue saved to history !!", Toast.LENGTH_SHORT).show()
             }
         }
 
@@ -151,7 +151,7 @@ class BodyFatCalculatorActivity : AppCompatActivity() {
             override fun onItemClick(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
 
                 Toast.makeText(this@BodyFatCalculatorActivity,
-                        "Clicked item is ${parent?.getItemAtPosition(position).toString()}",
+                        " ",
                         Toast.LENGTH_SHORT).show()
             }
         }
@@ -163,10 +163,8 @@ class BodyFatCalculatorActivity : AppCompatActivity() {
 
         var isValid: Boolean = true
 
-        when {
-            etMetricBFCAge.text.toString().isEmpty() -> {
-                isValid = false
-            }
+        if (etMetricBFCAge.text.toString().isEmpty()) {
+            isValid = false
         }
         if(etMetricBFCBMI.text.toString().isEmpty()){
             isValid = false
