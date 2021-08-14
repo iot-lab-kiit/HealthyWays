@@ -8,6 +8,7 @@ import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.observe
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.siddharthsinghbaghel.healthyways.R
 import com.siddharthsinghbaghel.healthyways.adapters.IWHistoryAdapter
@@ -44,8 +45,8 @@ class IdealWeightHistoryActivity : AppCompatActivity(), IWHistoryAdapter.IIWHist
         viewModel = ViewModelProvider(this,
             ViewModelProvider.AndroidViewModelFactory.getInstance(application)).get(HistoryViewModel::class.java)
 
-        viewModel.allIwHistory.observe(this,{
-            it?.let{
+        viewModel.allIwHistory.observe(this) {
+            it.let{
                 adapter.updateList(it)
             }
             when {
@@ -54,11 +55,11 @@ class IdealWeightHistoryActivity : AppCompatActivity(), IWHistoryAdapter.IIWHist
                     iwTvEmpty.visibility = View.VISIBLE
                 }
             }
-        })
+        }
     }
 
     override fun onItemClicked(iwHistory: IWHistoryEntity) {
-        Toast.makeText(this, "onItemClicked", Toast.LENGTH_SHORT).show()
+        Toast.makeText(this, "✅ Deleted Successfully", Toast.LENGTH_SHORT).show()
         viewModel.deleteIWHistory(iwHistory)
     }
 }

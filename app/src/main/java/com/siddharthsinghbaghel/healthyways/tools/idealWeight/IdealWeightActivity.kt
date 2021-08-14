@@ -65,7 +65,7 @@ class IdealWeightActivity : AppCompatActivity() {
 
 
             }else{
-                Toast.makeText(this, "Invalid Entries", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "❌ Please enter valid values !!", Toast.LENGTH_SHORT).show()
             }
 
         }
@@ -84,7 +84,7 @@ class IdealWeightActivity : AppCompatActivity() {
 
         if(heightValue <= 153)
         {
-            Toast.makeText(this, "Height Should be Greater than 153 cm for accurate measurement!!!", Toast.LENGTH_LONG).show()
+            Toast.makeText(this, "❌ Height Should be Greater than 153 cm for accurate measurement!!!", Toast.LENGTH_LONG).show()
             llResultIW.visibility = View.GONE
         }
         else {
@@ -132,7 +132,7 @@ class IdealWeightActivity : AppCompatActivity() {
             val x = currentDateTime.format(DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm")).toString()
 
             viewModel.insertIWHistory(IWHistoryEntity(robinsonResult,weightValue.toString(),heightValue.toString(),x))
-            Toast.makeText(this, "$robinsonResult Inserted", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "⛳ $robinsonResult saved in history !!", Toast.LENGTH_SHORT).show()
 
         }
 
