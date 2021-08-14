@@ -78,7 +78,7 @@ class OneRMCalculatorActivity : AppCompatActivity() {
             }else{
                 Toast.makeText(
                         this,
-                        "Please Enter valid values !!",
+                        "❌ Please Enter valid values !!",
                         Toast.LENGTH_SHORT
                 ).show()
             }
@@ -154,7 +154,7 @@ class OneRMCalculatorActivity : AppCompatActivity() {
         val x = currentDateTime.format(DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm")).toString()
 
         viewModel.insertORMHistory(OneRMCalcHistoryEntity(exerciseSelect,weightValue.toString(),repValue.toString(),oneRMValue,x))
-        Toast.makeText(this, "$oneRMValue Inserted", Toast.LENGTH_SHORT).show()
+        Toast.makeText(this, "⛳ $oneRMValue saved in history", Toast.LENGTH_SHORT).show()
 
         /*Insertion on database */
 
@@ -246,11 +246,11 @@ class OneRMCalculatorActivity : AppCompatActivity() {
 
                 if(currentVisibleView == METRIC_UNITS_VIEW){
                     Toast.makeText(this@OneRMCalculatorActivity,
-                            "US selected item is ${parent?.getItemAtPosition(position).toString()} and position $position",
+                            " ",
                             Toast.LENGTH_SHORT).show()
                 }else if(currentVisibleView == US_UNITS_VIEW){
                     Toast.makeText(this@OneRMCalculatorActivity,
-                            "Metric selected item is ${parent?.getItemAtPosition(position).toString()} and position $position",
+                            " ",
                             Toast.LENGTH_SHORT).show()
                 }
 
@@ -281,7 +281,7 @@ class OneRMCalculatorActivity : AppCompatActivity() {
             override fun onItemClick(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
 
                 Toast.makeText(this@OneRMCalculatorActivity,
-                        "Clicked item is ${parent?.getItemAtPosition(position).toString()}",
+                        " ",
                         Toast.LENGTH_SHORT).show()
             }
         }

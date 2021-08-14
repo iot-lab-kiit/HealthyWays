@@ -8,6 +8,7 @@ import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.observe
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.siddharthsinghbaghel.healthyways.R
 import com.siddharthsinghbaghel.healthyways.adapters.ORMHistoryAdapter
@@ -44,8 +45,8 @@ class ORMHistoryViewActivity : AppCompatActivity(), ORMHistoryAdapter.IORMHistor
         viewModel = ViewModelProvider(this,
                 ViewModelProvider.AndroidViewModelFactory.getInstance(application)).get(HistoryViewModel::class.java)
 
-        viewModel.allORMHistory.observe(this,{
-            it?.let{
+        viewModel.allORMHistory.observe(this) {
+            it.let{
                 adapter.updateList(it)
             }
             when {
@@ -54,11 +55,11 @@ class ORMHistoryViewActivity : AppCompatActivity(), ORMHistoryAdapter.IORMHistor
                     tvEmptyOrm.visibility = View.VISIBLE
                 }
             }
-        })
+        }
     }
 
     override fun onItemClicked(ormHistory: OneRMCalcHistoryEntity) {
-        Toast.makeText(this, "onItemClicked", Toast.LENGTH_SHORT).show()
+        Toast.makeText(this, "✅ Deleted Successfully !!", Toast.LENGTH_SHORT).show()
         viewModel.deleteORMHistory(ormHistory)
     }
 }
