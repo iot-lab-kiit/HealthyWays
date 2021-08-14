@@ -67,7 +67,7 @@ class BMRCalculatorActivity : AppCompatActivity() {
 
                 calculateBMR(ageValue,heightValue,weightValue)
             }else{
-                Toast.makeText(this, "Invalid Entries", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "❌ Please enter valid values !!", Toast.LENGTH_SHORT).show()
             }
 
         }
@@ -139,26 +139,23 @@ class BMRCalculatorActivity : AppCompatActivity() {
         val x = currentDateTime.format(DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm")).toString()
 
         viewModel.insertBMRHistory(BMRCalcHistoryEntity(exerExtent,weightValue.toString(),heightValue.toString(),x,bmrResult.toString(),tdeeResult.toString()))
-        Toast.makeText(this, "$bmrResult Inserted", Toast.LENGTH_SHORT).show()
+        Toast.makeText(this, "⛳ $bmrResult saved in History", Toast.LENGTH_SHORT).show()
 
     }
 
 
     private fun validateUnits(): Boolean {
 
-        val isValid = true
+        var isValid: Boolean = true
 
-        if(etMetricBMRAge.text!!.isEmpty()){
-            !isValid
-            Toast.makeText(this, " Here Age", Toast.LENGTH_SHORT).show()
+        if(etMetricBMRAge.text.toString().isEmpty()){
+            isValid = false
         }
-        if(etMetricBMRHeight.text!!.isEmpty()){
-            !isValid
-            Toast.makeText(this, " Here BMI", Toast.LENGTH_SHORT).show()
+        if(etMetricBMRHeight.text.toString().isEmpty()){
+            isValid = false
         }
-        if(etMetricBMRWeight.text!!.isEmpty()){
-            !isValid
-            Toast.makeText(this, " Here BMI", Toast.LENGTH_SHORT).show()
+        if(etMetricBMRWeight.text.toString().isEmpty()){
+            isValid = false
         }
         return isValid
     }
