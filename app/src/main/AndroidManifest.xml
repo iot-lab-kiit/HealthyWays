@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.siddharthsinghbaghel.healthyways">
+    package="com.iot.lab.healthyways">
 
     <application
         android:allowBackup="true"
@@ -9,39 +9,39 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.HealthyWays">
-        <activity android:name=".MainActivityBottomNav"
+        <activity android:name="in.iot.lab.healthyways.MainActivityBottomNav"
                   android:screenOrientation="portrait"/>
-        <activity android:name=".tools.BMR.BMRHistoryViewActivity" />
-        <activity android:name=".tools.oneRM.ORMHistoryViewActivity" />
-        <activity android:name=".tools.idealWeight.IdealWeightHistoryActivity" />
-        <activity android:name=".tools.bodyFat.FatHistoryViewActivity" />
-        <activity android:name=".tools.goalCalc.GCHistoryViewActivity" />
+        <activity android:name="in.iot.lab.healthyways.tools.BMR.BMRHistoryViewActivity" />
+        <activity android:name="in.iot.lab.healthyways.tools.oneRM.ORMHistoryViewActivity" />
+        <activity android:name="in.iot.lab.healthyways.tools.idealWeight.IdealWeightHistoryActivity" />
+        <activity android:name="in.iot.lab.healthyways.tools.bodyFat.FatHistoryViewActivity" />
+        <activity android:name="in.iot.lab.healthyways.tools.goalCalc.GCHistoryViewActivity" />
         <activity
-            android:name=".tools.goalCalc.GoalCalculator"
+            android:name="in.iot.lab.healthyways.tools.goalCalc.GoalCalculator"
             android:label="@string/title_activity_goal_calculator"
             android:theme="@style/Theme.HealthyWays.NoActionBar" />
-        <activity android:name=".tools.idealWeight.IdealWeightActivity" />
-        <activity android:name=".tools.BMR.BMRCalculatorActivity" />
-        <activity android:name=".tools.bodyFat.BodyFatCalculatorActivity" />
+        <activity android:name="in.iot.lab.healthyways.tools.idealWeight.IdealWeightActivity" />
+        <activity android:name="in.iot.lab.healthyways.tools.BMR.BMRCalculatorActivity" />
+        <activity android:name="in.iot.lab.healthyways.tools.bodyFat.BodyFatCalculatorActivity" />
         <activity
-            android:name=".tools.oneRM.OneRMCalculatorActivity"
+            android:name="in.iot.lab.healthyways.tools.oneRM.OneRMCalculatorActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.HealthyWays" />
-        <activity android:name=".tools.BMI.BMIHistoryViewActivity" />
+        <activity android:name="in.iot.lab.healthyways.tools.BMI.BMIHistoryViewActivity" />
         <activity
-            android:name=".tools.BMI.BMICalculatorActivity"
-            android:screenOrientation="portrait"
-            android:theme="@style/Theme.HealthyWays" />
-        <activity
-            android:name=".exercise.ExerciseFinishActivity"
+            android:name="in.iot.lab.healthyways.tools.BMI.BMICalculatorActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.HealthyWays" />
         <activity
-            android:name=".exercise.ExerciseActivity"
+            android:name="in.iot.lab.healthyways.exercise.ExerciseFinishActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.HealthyWays" />
         <activity
-            android:name=".SplashScreenActivity"
+            android:name="in.iot.lab.healthyways.exercise.ExerciseActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.HealthyWays" />
+        <activity
+            android:name="in.iot.lab.healthyways.SplashScreenActivity"
             >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
