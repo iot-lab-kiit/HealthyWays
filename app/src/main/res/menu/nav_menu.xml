@@ -15,4 +15,9 @@
         android:icon="@drawable/ic_hist"
         android:title="@string/history"/>
 
+    <item
+        android:id="@+id/aboutUs"
+        android:icon="@drawable/ic_info"
+        android:title="@string/about_us"/>
+
 </menu>

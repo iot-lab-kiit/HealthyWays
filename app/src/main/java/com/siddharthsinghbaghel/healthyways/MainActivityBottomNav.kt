@@ -3,6 +3,7 @@ package com.siddharthsinghbaghel.healthyways
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
+import com.siddharthsinghbaghel.healthyways.navFragments.AboutUsFragment
 import com.siddharthsinghbaghel.healthyways.navFragments.ExerciseFragment
 import com.siddharthsinghbaghel.healthyways.navFragments.HistoryFragment
 import com.siddharthsinghbaghel.healthyways.navFragments.ToolsFragment
@@ -15,6 +16,7 @@ class MainActivityBottomNav : AppCompatActivity() {
     private val toolsFragment = ToolsFragment()
     private val historyFragment = HistoryFragment()
     private val exerciseFragment = ExerciseFragment()
+    private val aboutUsFragment = AboutUsFragment()
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -36,6 +38,7 @@ class MainActivityBottomNav : AppCompatActivity() {
                 R.id.tools -> replaceFragments(toolsFragment)
                 R.id.sevenMinExercises -> replaceFragments(exerciseFragment)
                 R.id.history -> replaceFragments(historyFragment)
+                R.id.aboutUs -> replaceFragments(aboutUsFragment)
 
             }
             true
