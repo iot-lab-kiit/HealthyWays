@@ -18,7 +18,6 @@
             android:layout_marginBottom="15dp"
             android:text="About Us"
             android:textAlignment="center"
-            android:textColor="@color/black"
             android:textSize="30sp" />
 
         <ImageView
@@ -36,7 +35,6 @@
             android:layout_marginBottom="15dp"
             android:text="@string/about_iot_lab"
             android:textAlignment="center"
-            android:textColor="@color/black"
             android:textSize="18sp" />
 
 
@@ -61,6 +59,7 @@
                 android:layout_height="40dp"
                 android:layout_gravity="center"
                 android:layout_marginEnd="15dp"
+
                 android:src="@drawable/twitter" />
 
             <ImageView
@@ -130,7 +129,7 @@
             android:layout_marginBottom="15dp"
             android:text="About The App"
             android:textAlignment="center"
-            android:textColor="@color/black"
+
             android:textSize="30sp" />
 
 
@@ -138,7 +137,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="@string/about_app"
+            android:text="Batata HU"
             android:textAlignment="center"
             android:textColor="@color/black"
             android:textSize="18sp"
