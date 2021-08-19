@@ -57,4 +57,5 @@
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
     <string name="about_us">About Us</string>
     <string name="about_iot_lab">IoT Lab at KIIT is a group of committed students who work under the guidance of a group of capable and supportive teachers who guide us through each phase and stage. IoT Lab is a research forum that examines the possibilities of crowd sourcing and the Internet of Things for trans disciplinary research and initiatives that involve greater end-user participation. We currently have a number of successful goods and prototypes. We also provide web development and app development services.</string>
+    <string name="about_the_app">Health is our principal capital asset. Our app aims to monitor your good health with some necessary and easily usable tools, along with amazing 7 minutes exercising tool.</string>
 </resources>

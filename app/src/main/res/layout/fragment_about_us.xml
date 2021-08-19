@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -18,6 +17,8 @@
             android:layout_marginBottom="15dp"
             android:text="About Us"
             android:textAlignment="center"
+            android:textColor="@color/colorAccent"
+            android:textStyle="bold"
             android:textSize="30sp" />
 
         <ImageView
@@ -129,6 +130,8 @@
             android:layout_marginBottom="15dp"
             android:text="About The App"
             android:textAlignment="center"
+            android:textStyle="bold"
+            android:textColor="@color/colorAccent"
 
             android:textSize="30sp" />
 
@@ -137,9 +140,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="Batata HU"
+            android:text="@string/about_the_app"
             android:textAlignment="center"
-            android:textColor="@color/black"
             android:textSize="18sp"
 
             />

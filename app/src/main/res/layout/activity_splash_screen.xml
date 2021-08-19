@@ -8,11 +8,34 @@
     tools:context=".SplashScreenActivity">
 
     <ImageView
-        android:layout_width="120dp"
-        android:layout_height="120dp"
-        android:src="@drawable/ic_calorie"
+        android:id="@+id/logo"
+        android:layout_width="500dp"
+        android:layout_height="500dp"
+        android:src="@drawable/logomain"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
+        />
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Healthy Ways"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:layout_below="@id/logo"
+        android:layout_centerHorizontal="true"
+        android:textSize="28dp"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Developed By IoT Lab, KIIT"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:layout_marginTop="12dp"
+        android:layout_below="@id/name"
+        android:layout_centerHorizontal="true"
+        android:textSize="18dp"
         />
 
 </RelativeLayout>
