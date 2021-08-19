@@ -1,7 +1,7 @@
 package `in`.iot.lab.healthyways
 
 import `in`.iot.lab.healthyways.exercise.ExerciseModel
-import com.iot.lab.healthyways.R
+
 
 class Constants {
 

@@ -1,5 +1,6 @@
 package `in`.iot.lab.healthyways.exercise
 
+import `in`.iot.lab.healthyways.R
 import android.content.Context
 import android.graphics.Color
 import android.view.LayoutInflater
@@ -8,7 +9,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
-import com.iot.lab.healthyways.R
+
 import kotlinx.android.synthetic.main.item_exercise_status.view.*
 
 class ExerciseStatusAdapter(private val items: ArrayList<ExerciseModel>, private val context:Context): RecyclerView.Adapter<ExerciseStatusAdapter.ExerciseViewHolder>() {

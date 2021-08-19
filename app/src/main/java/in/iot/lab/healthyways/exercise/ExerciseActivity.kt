@@ -1,6 +1,7 @@
   package `in`.iot.lab.healthyways.exercise
 
 import `in`.iot.lab.healthyways.Constants
+import `in`.iot.lab.healthyways.R
 import android.app.Dialog
 import android.content.Intent
 import android.media.MediaPlayer
@@ -11,7 +12,7 @@ import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.iot.lab.healthyways.R
+
 import kotlinx.android.synthetic.main.activity_exercise.*
 import kotlinx.android.synthetic.main.dialog_custom_back_conformation.*
 import kotlinx.android.synthetic.main.item_exercise_status.*

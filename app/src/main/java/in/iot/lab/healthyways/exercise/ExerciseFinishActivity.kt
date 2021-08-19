@@ -1,8 +1,9 @@
 package `in`.iot.lab.healthyways.exercise
 
+import `in`.iot.lab.healthyways.R
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.iot.lab.healthyways.R
+
 import kotlinx.android.synthetic.main.activity_exercise_finish.*
 
 class ExerciseFinishActivity : AppCompatActivity() {

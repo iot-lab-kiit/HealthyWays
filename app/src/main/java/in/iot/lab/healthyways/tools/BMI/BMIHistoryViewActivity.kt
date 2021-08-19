@@ -1,5 +1,6 @@
 package `in`.iot.lab.healthyways.tools.BMI
 
+import `in`.iot.lab.healthyways.R
 import `in`.iot.lab.healthyways.adapters.BMIHistoryAdapter
 import `in`.iot.lab.healthyways.room.history.HistoryViewModel
 import `in`.iot.lab.healthyways.room.history.entities.BMIHistoryEntity
@@ -10,7 +11,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.observe
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.iot.lab.healthyways.R
+
 
 import kotlinx.android.synthetic.main.activity_bmi_history.*
 

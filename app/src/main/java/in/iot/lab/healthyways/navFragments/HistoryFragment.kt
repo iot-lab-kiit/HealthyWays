@@ -1,5 +1,6 @@
 package `in`.iot.lab.healthyways.navFragments
 
+import `in`.iot.lab.healthyways.R
 import `in`.iot.lab.healthyways.tools.BMI.BMIHistoryViewActivity
 import `in`.iot.lab.healthyways.tools.BMR.BMRHistoryViewActivity
 import `in`.iot.lab.healthyways.tools.bodyFat.FatHistoryViewActivity
@@ -12,7 +13,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.iot.lab.healthyways.R
+
 import kotlinx.android.synthetic.main.fragment_history.view.*
 
 

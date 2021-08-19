@@ -1,5 +1,6 @@
 package `in`.iot.lab.healthyways.tools.idealWeight
 
+import `in`.iot.lab.healthyways.R
 import `in`.iot.lab.healthyways.room.history.HistoryViewModel
 import `in`.iot.lab.healthyways.room.history.entities.IWHistoryEntity
 import android.content.Context
@@ -16,7 +17,6 @@ import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
-import com.iot.lab.healthyways.R
 import kotlinx.android.synthetic.main.activity_ideal_weight.*
 import java.math.BigDecimal
 import java.math.RoundingMode

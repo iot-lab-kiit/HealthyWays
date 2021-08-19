@@ -1,5 +1,6 @@
 package `in`.iot.lab.healthyways.adapters
 
+import `in`.iot.lab.healthyways.R
 import `in`.iot.lab.healthyways.room.history.entities.BMIHistoryEntity
 import android.content.Context
 import android.view.LayoutInflater
@@ -8,7 +9,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.iot.lab.healthyways.R
+
 
 import kotlinx.android.synthetic.main.bmi_history_item.view.*
 import java.util.*

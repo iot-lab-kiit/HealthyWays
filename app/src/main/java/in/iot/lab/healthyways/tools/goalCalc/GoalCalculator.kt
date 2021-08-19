@@ -1,5 +1,6 @@
 package `in`.iot.lab.healthyways.tools.goalCalc
 
+import `in`.iot.lab.healthyways.R
 import `in`.iot.lab.healthyways.room.history.HistoryViewModel
 import `in`.iot.lab.healthyways.room.history.entities.GCHistoryEntity
 import `in`.iot.lab.healthyways.tools.BMR.BMRCalculatorActivity
@@ -17,7 +18,6 @@ import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import com.google.android.material.snackbar.Snackbar
-import com.iot.lab.healthyways.R
 import kotlinx.android.synthetic.main.activity_goal_calculator.*
 import java.math.BigDecimal
 import java.math.RoundingMode

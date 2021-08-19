@@ -7,7 +7,7 @@ import `in`.iot.lab.healthyways.navFragments.AboutUsFragment
 import `in`.iot.lab.healthyways.navFragments.ExerciseFragment
 import `in`.iot.lab.healthyways.navFragments.HistoryFragment
 import `in`.iot.lab.healthyways.navFragments.ToolsFragment
-import com.iot.lab.healthyways.R
+
 import kotlinx.android.synthetic.main.activity_main_bottom_nav.*
 
 

@@ -1,5 +1,6 @@
 package `in`.iot.lab.healthyways.tools.bodyFat
 
+import `in`.iot.lab.healthyways.R
 import `in`.iot.lab.healthyways.room.history.HistoryViewModel
 import `in`.iot.lab.healthyways.room.history.entities.FatCalcHistoryEntity
 import `in`.iot.lab.healthyways.tools.BMI.BMICalculatorActivity
@@ -15,7 +16,6 @@ import android.widget.Spinner
 import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.lifecycle.ViewModelProvider
-import com.iot.lab.healthyways.R
 import kotlinx.android.synthetic.main.activity_body_fat_calculator.*
 import kotlinx.android.synthetic.main.activity_body_fat_calculator.btnCalculateBFC
 import kotlinx.android.synthetic.main.activity_body_fat_calculator.etMetricBFCAge

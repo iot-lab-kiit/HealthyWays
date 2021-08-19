@@ -1,6 +1,7 @@
 package `in`.iot.lab.healthyways.tools.idealWeight
 
 
+import `in`.iot.lab.healthyways.R
 import `in`.iot.lab.healthyways.adapters.IWHistoryAdapter
 import `in`.iot.lab.healthyways.room.history.HistoryViewModel
 import `in`.iot.lab.healthyways.room.history.entities.IWHistoryEntity
@@ -13,7 +14,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.observe
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.iot.lab.healthyways.R
 import kotlinx.android.synthetic.main.activity_iw_history.*
 
 

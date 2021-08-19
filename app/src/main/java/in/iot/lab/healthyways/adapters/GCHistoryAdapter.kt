@@ -1,5 +1,6 @@
 package `in`.iot.lab.healthyways.adapters
 
+import `in`.iot.lab.healthyways.R
 import `in`.iot.lab.healthyways.room.history.entities.GCHistoryEntity
 import android.content.Context
 import android.os.Build
@@ -10,7 +11,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.annotation.RequiresApi
 import androidx.recyclerview.widget.RecyclerView
-import com.iot.lab.healthyways.R
+
 
 
 
