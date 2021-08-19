@@ -9,6 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.HealthyWays">
+        <activity android:name=".MainActivityBottomNav"
+                  android:screenOrientation="portrait"/>
         <activity android:name=".tools.BMR.BMRHistoryViewActivity" />
         <activity android:name=".tools.oneRM.ORMHistoryViewActivity" />
         <activity android:name=".tools.idealWeight.IdealWeightHistoryActivity" />
@@ -39,11 +41,10 @@
             android:screenOrientation="portrait"
             android:theme="@style/Theme.HealthyWays" />
         <activity
-            android:name=".MainActivityBottomNav"
-            android:screenOrientation="portrait">
+            android:name=".SplashScreenActivity"
+            >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
