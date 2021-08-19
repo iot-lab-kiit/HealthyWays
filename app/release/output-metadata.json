@@ -4,7 +4,7 @@
     "type": "APK",
     "kind": "Directory"
   },
-  "applicationId": "com.siddharthsinghbaghel.healthyways",
+  "applicationId": "in.iot.lab.healthyways",
   "variantName": "processReleaseResources",
   "elements": [
     {
