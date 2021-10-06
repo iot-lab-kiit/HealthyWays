@@ -56,7 +56,7 @@ https://icons8.com/
 
 4.Any possible UI updates.
 
-5.Refer to [issues](https://github.com/iot-lab-kiit/HealthyWays/issues=100x100) for more tasks.
+5.Refer to [issues](https://github.com/iot-lab-kiit/HeathyWays/issues) for more tasks.
 
 6.Any other useful updates that comes to your mind.
 
