@@ -89,7 +89,7 @@ greater end-user participation. We currently have a number of successful goods a
 
 <a name="contents"></a>
 ## Table of Contents
-- [Android Component Library ](#title)
+- [Healthy Ways ](#title)
 - [About The App ](#about)
 - [About Iot Labs,KIIT ](#about_developers)
 - [App Preview ](#preview)
