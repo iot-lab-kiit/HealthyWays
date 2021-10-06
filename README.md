@@ -82,11 +82,35 @@ greater end-user participation. We currently have a number of successful goods a
 
 <br>
 <br>
+
 <img src="https://github.com/iot-lab-kiit/HeathyWays/blob/master/image_assest/Screenshot_1633498498.png" width="200" height="400"/>&emsp; &emsp; &emsp;
 
 
 
+<a name="contents"></a>
+## Table of Contents
+- [Android Component Library ](#title)
+- [About The App ](#about)
+- [About Iot Labs,KIIT ](#about_developers)
+- [App Preview ](#preview)
+- [Installation ](#play)
+- [Tasks](#tasks)
+- [Steps to Contribute ](#contribute)
+- [License ](#license)
 
+<a name="play"></a>
+## Installation
+ <a href="https://play.google.com/store/apps/details?id=in.iot.lab.healthyways">
+  <img src="https://img.shields.io/badge/Google_Play-414141?style=for-the-badge&logo=google-play&logoColor=white">
+ </a>
+<br>
+<br>
+
+[Back to Start](#title)
+
+<a name="license"></a>
+## LICENSE
+T𝚑𝚒𝚜 𝚙𝚛𝚘𝚓𝚎𝚌𝚝 𝚒𝚜 𝚞𝚗𝚍𝚎𝚛 [GNU General Public License v3.0 License]
 
 
 
