@@ -29,4 +29,25 @@ A month-long celebration from October 1st - 31st sponsored by [Digital Ocean](ht
 ```bash
 git clone https://github.com/Your-username/HealthyWays.git
 ```
+3.Finalise the issue or update in which you will be working.
+
+4.If adding any image please make sure it must be .png image.
+
+5.In case someone is adding any icons please refer to the below website to maintain the similarity with the rest of the icons. 
+```bash
+https://icons8.com/
+```
+6.Send us a Pull Request discribing about the great changes you have added.
+
+
+
+
+
+
+
+
+
+
+
+
 
