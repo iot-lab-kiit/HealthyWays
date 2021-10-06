@@ -39,8 +39,26 @@ https://icons8.com/
 ```
 6.Send us a Pull Request discribing about the great changes you have added.
 
+<a name="tasks"></a>
+## Choose from these Tasks
 
+1.Calorie Calculator UI :  Create the calorie calculator screen as depicted below (name it `activity_calorie_calculator.xml`).   
 
+<img src="https://github.com/iot-lab-kiit/HeathyWays/blob/master/image_assest/2.jpg" width="200" height="300"/>&emsp; &emsp; &emsp;
+
+2. Calorie Calculator Button UI : Create a Button UI for calorie calculator. Sample buttons example in below attached image. Use appropriate icon for calorie and the button created must match the theme of the app. (Create a seperate xml file in `layout` folder with name `calorie_button.xml`)
+
+<img src="https://github.com/iot-lab-kiit/HeathyWays/blob/master/image_assest/1.jpg" width="300" height="200"/>&emsp; &emsp; &emsp;
+
+3. Calorie Calculator History Card UI : Create a card for history of calorie tool. There are two images attached one hand made shows what to add and other shows how to be made.
+
+<img src="https://github.com/iot-lab-kiit/HeathyWays/blob/master/image_assest/3.jpg" width="300" height="200"/>&emsp; &emsp; &emsp;<img src="https://github.com/iot-lab-kiit/HeathyWays/blob/master/image_assest/4.jpg" width="300" height="200"/>&emsp; &emsp; &emsp;
+
+4.Any possible UI updates.
+
+5.Refer to [issues](https://github.com/iot-lab-kiit/Android-Components-Library/issues=100x100) for more tasks.
+
+6.Any other useful updates that comes to your mind.
 
 
 
