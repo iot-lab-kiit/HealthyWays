@@ -60,6 +60,14 @@ https://icons8.com/
 
 6.Any other useful updates that comes to your mind.
 
+<a name="about_developers"></a>
+## About IoT Labs,KIIT
+This project has been made by the dedicated team of students under [`IoT Labs,KIIT`](https://iotkiit.in/).
+`IoT Lab at KIIT` is a group of committed students who work under the guidance of a group of capable and supportive teachers who guide us through each phase and stage. 
+`IoT Lab` is a research forum that examines the possibilities of crowdsourcing and the Internet of Things for transdisciplinary research and initiatives that involve 
+greater end-user participation. We currently have a number of successful goods and prototypes. We also provide web development and app development services.
+
+
 
 
 
