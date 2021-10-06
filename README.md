@@ -67,6 +67,29 @@ This project has been made by the dedicated team of students under [`IoT Labs,KI
 `IoT Lab` is a research forum that examines the possibilities of crowdsourcing and the Internet of Things for transdisciplinary research and initiatives that involve 
 greater end-user participation. We currently have a number of successful goods and prototypes. We also provide web development and app development services.
 
+<a name="preview"></a>
+## App Preview
+<img src="https://github.com/iot-lab-kiit/HeathyWays/blob/master/image_assest/Screenshot_1633498185.png?raw=true" width="200" height="400"/>&emsp; &emsp; &emsp;
+<img src="https://github.com/iot-lab-kiit/HeathyWays/blob/master/image_assest/Screenshot_1633498207.png?raw=true" width="200" height="400"/>&emsp; &emsp; &emsp;
+<img src="https://github.com/iot-lab-kiit/HeathyWays/blob/master/image_assest/Screenshot_1633498389.png?raw=true" width="200" height="400"/>&emsp; &emsp; &emsp;
+---
+<br>
+<br>
+
+<img src="https://github.com/iot-lab-kiit/HeathyWays/blob/master/image_assest/Screenshot_1633498477.png" width="200" height="400"/>&emsp; &emsp; &emsp;
+<img src="https://github.com/iot-lab-kiit/HeathyWays/blob/master/image_assest/Screenshot_1633498471.png" width="200" height="400"/>&emsp; &emsp; &emsp;
+<img src="https://github.com/iot-lab-kiit/HeathyWays/blob/master/image_assest/Screenshot_1633498401.png" width="200" height="400"/>&emsp; &emsp; &emsp;
+
+<br>
+<br>
+<img src="https://github.com/iot-lab-kiit/HeathyWays/blob/master/image_assest/Screenshot_1633498498.png" width="200" height="400"/>&emsp; &emsp; &emsp;
+
+
+
+
+
+
+
 
 
 
