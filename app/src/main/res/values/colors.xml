@@ -14,5 +14,7 @@
     <color name="grey_blue">#82A8BF</color>
     <color name="light_grey">#C4C4C4</color>
     <color name="darkGrey">#5E5E5E</color>
+    <color name="gradientColor1">@color/colorAccent</color>
+    <color name="gradientColor2">#AEEA00</color>
 
 </resources>
