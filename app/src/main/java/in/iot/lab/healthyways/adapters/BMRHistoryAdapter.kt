@@ -13,6 +13,7 @@ import androidx.annotation.RequiresApi
 import androidx.recyclerview.widget.RecyclerView
 
 import kotlinx.android.synthetic.main.bmr_history_item.view.*
+import java.text.DecimalFormat
 import java.util.*
 
 class BMRHistoryAdapter(private val context: Context, private val listener: IBMRHistoryRVAdapter):
@@ -47,8 +48,13 @@ class BMRHistoryAdapter(private val context: Context, private val listener: IBMR
         holder.exerExtent.text = currentHistory.exerExtent
         holder.weightValue.text = currentHistory.weightValue
         holder.heightValue.text = currentHistory.heightValue
-        holder.bmrValue.text = currentHistory.bmrValue
-        holder.tdeeValue.text = currentHistory.tdeeValue
+        val formatter = DecimalFormat("#.##")
+        currentHistory.bmrValue.toDoubleOrNull()?.let {
+            holder.bmrValue.text = formatter.format(it)
+        }
+        currentHistory.tdeeValue.toDoubleOrNull()?.let {
+            holder.tdeeValue.text = formatter.format(it)
+        }
         holder.bmrDateT.text = currentHistory.bmrDateT
 
     }
