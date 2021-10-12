@@ -13,6 +13,7 @@ import androidx.annotation.RequiresApi
 import androidx.recyclerview.widget.RecyclerView
 
 import kotlinx.android.synthetic.main.orm_history_item.view.*
+import java.text.DecimalFormat
 import java.util.*
 
 class ORMHistoryAdapter(private val context: Context, private val listener: ORMHistoryAdapter.IORMHistoryRVAdapter):
@@ -43,13 +44,16 @@ class ORMHistoryAdapter(private val context: Context, private val listener: ORMH
 
 
         val currentHistory = allORMHistory[position]
-        holder.ormValue.text = currentHistory.oneRMValue
+       
         holder.exerciseUsed.text = currentHistory.exerChoosed
         holder.weightUsed.text = currentHistory.weightValue
         holder.rep.text = currentHistory.repValue
         holder.dateTime.text = currentHistory.ormDateT
 
-
+        val deciFormatter = DecimalFormat("#.##")
+        currentHistory.oneRMValue.toDoubleOrNull()?.let {
+            holder.ormValue.text = deciFormatter.format(it)
+        }
 
     }
 
