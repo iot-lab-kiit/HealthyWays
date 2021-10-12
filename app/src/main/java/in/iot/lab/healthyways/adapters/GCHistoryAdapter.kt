@@ -16,6 +16,7 @@ import androidx.recyclerview.widget.RecyclerView
 
 
 import kotlinx.android.synthetic.main.gc_history_item.view.*
+import java.text.DecimalFormat
 import java.util.*
 
 class GCHistoryAdapter(private val context: Context, private val listener: GCHistoryAdapter.IGCHistoryRVAdapter):
@@ -29,8 +30,8 @@ class GCHistoryAdapter(private val context: Context, private val listener: GCHis
          val targetWeight: TextView = view.txtTargetWeightValue
          val weekValue: TextView= view.txtWeekValue
          val gcDateT: TextView = view.dateGC
-         val perDayCal: TextView = view.txtCalValue
          val btnDelete: ImageView = view.btnGCDelete
+         val perDayCal: TextView = view.txtCalValue
      }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): GCHistoryAdapter.GCHistoryViewHolder {
@@ -50,8 +51,11 @@ class GCHistoryAdapter(private val context: Context, private val listener: GCHis
         holder.targetWeight.text = currentHistory.targetWeight
         holder.weekValue.text = currentHistory.weekValue
         holder.gcDateT.text = currentHistory.gcDateT
-        holder.perDayCal.text = currentHistory.perDayCal
 
+        val deciFormatter = DecimalFormat("#.##")
+        currentHistory.perDayCal.toDoubleOrNull()?.let {
+            holder.perDayCal.text = deciFormatter.format(it)
+        }
     }
 
     override fun getItemCount(): Int {

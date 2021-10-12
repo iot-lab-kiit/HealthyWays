@@ -12,6 +12,7 @@ import android.widget.TextView
 import androidx.annotation.RequiresApi
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.iw_history_item.view.*
+import java.text.DecimalFormat
 import java.util.*
 
 class IWHistoryAdapter(private val context: Context, private val listener: IWHistoryAdapter.IIWHistoryRVAdapter):
@@ -41,12 +42,13 @@ class IWHistoryAdapter(private val context: Context, private val listener: IWHis
 
         val currentHistory = allIwHistory[position]
         holder.iwHeight.text = currentHistory.iwHeight
-        holder.iwValue.text = currentHistory.IWValue
         holder.iwWeight.text = currentHistory.iwWeight
         holder.dateTime.text = currentHistory.iwDateT
 
-
-
+        val deciFormatter = DecimalFormat("#.##")
+        currentHistory.IWValue.toDoubleOrNull()?.let {
+            holder.iwValue.text = deciFormatter.format(it)
+        }
     }
 
     override fun getItemCount(): Int {
