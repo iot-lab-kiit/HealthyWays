@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView
 
 
 import kotlinx.android.synthetic.main.bmi_history_item.view.*
+import java.text.DecimalFormat
 import java.util.*
 
 class BMIHistoryAdapter(private val context: Context, private val listener: BMIHistoryAdapter.IBMIHistoryRVAdapter):
@@ -39,11 +40,15 @@ class BMIHistoryAdapter(private val context: Context, private val listener: BMIH
 
 
         val currentHistory = allBmiHistory[position]
-        holder.bmiValue.text = currentHistory.bmiValue
+
         holder.bmiState.text = currentHistory.bmiState
         holder.bmiHeight.text = currentHistory.bmiHeight
         holder.bmiWeight.text = currentHistory.bmiWeight
 
+        val deciFormatter = DecimalFormat("#.##")
+        currentHistory.bmiValue.toDoubleOrNull()?.let {
+            holder.bmiValue.text = deciFormatter.format(it)
+        }
 
     }
 
