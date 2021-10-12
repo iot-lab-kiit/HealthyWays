@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView
 
 
 import kotlinx.android.synthetic.main.fat_history_item.view.*
+import java.text.DecimalFormat
 import java.util.*
 
 class FatHistoryAdapter(private val context: Context, private val listener: FatHistoryAdapter.IGCHistoryRVAdapter):
@@ -44,12 +45,19 @@ class FatHistoryAdapter(private val context: Context, private val listener: FatH
 
 
         val currentHistory = allFatHistory[position]
-        holder.fatPerc.text = currentHistory.fatPerc
-        holder.fatMass.text = currentHistory.fatMass
         holder.age.text = currentHistory.ageValue
         holder.bmiValue.text = currentHistory.bmiValue
         holder.fatDateT.text = currentHistory.fatDateT
+        holder.fatPerc.text = currentHistory.fatPerc
+        holder.fatMass.text = currentHistory.fatMass
 
+        val formatter = DecimalFormat("#.##")
+        currentHistory.fatPerc.toDoubleOrNull()?.let {
+            holder.fatPerc.text = formatter.format(it)
+        }
+        currentHistory.fatMass.toDoubleOrNull()?.let {
+            holder.fatMass.text = formatter.format(it)
+        }
     }
 
     override fun getItemCount(): Int {
