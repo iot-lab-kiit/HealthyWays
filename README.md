@@ -42,7 +42,7 @@ https://icons8.com/
 <a name="tasks"></a>
 ## Choose from these Tasks
 
-1.Create Login/Signup page UI
+1.Create Login/Signup page using firebase.
 
 2.Calorie Calculator UI :  Create the calorie calculator screen as depicted below (name it `activity_calorie_calculator.xml`).   
 
