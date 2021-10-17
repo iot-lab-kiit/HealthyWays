@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/gradient_background_login"
+    android:orientation="vertical"
+    tools:context=".LoginActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:text="Welcome! Login Required"
+            android:textColor="#304FFE"
+            android:textSize="28sp"
+            android:layout_marginTop="25dp"
+            android:textStyle="bold|italic"
+            android:layout_centerHorizontal="true"
+            />
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/grandpa"
+            android:layout_width="match_parent"
+            android:layout_height="400dp"
+            app:lottie_rawRes="@raw/granpa"
+            app:lottie_autoPlay="true"
+            android:layout_marginTop="15dp"
+            android:layout_below="@id/login"
+            app:lottie_loop="true"
+            />
+        <TextView
+            android:id="@+id/intro"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:text="@string/appIntro"
+            android:textColor="@color/grey_blue"
+            android:textSize="18sp"
+            android:layout_below="@id/grandpa"
+            android:textStyle="bold"
+            android:layout_centerHorizontal="true"
+
+            />
+
+    </RelativeLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_forward"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:elevation="18dp"
+        android:layout_margin="18dp"
+        app:rippleColor="#FFFFFF"
+        android:backgroundTint="@color/gradientColor2"
+        />
+
+</RelativeLayout>
