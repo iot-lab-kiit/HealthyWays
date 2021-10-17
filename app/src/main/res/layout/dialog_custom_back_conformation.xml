@@ -12,7 +12,6 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:text="Are you sure?"
-        android:textColor="@android:color/black"
         android:padding="10dp"
         android:textSize="18sp"
         android:textStyle="bold" />
@@ -25,7 +24,6 @@
         android:layout_marginEnd="10dp"
         android:gravity="center"
         android:text="This will stop your workout. You\'ve come this far, are you sure you want to quit?"
-        android:textColor="#212121"
         android:textSize="16sp" />
 
     <LinearLayout
