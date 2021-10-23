@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@drawable/gradient_background_login"
+    android:background="@drawable/gradient_background"
     android:orientation="vertical"
     >
 
@@ -16,8 +16,8 @@
         <ImageView
             android:id="@+id/imgWork"
             android:layout_width="match_parent"
-            android:layout_height="400dp"
-            android:src="@drawable/workout1" />
+            android:layout_height="350dp"
+            android:src="@drawable/running" />
 
         <com.rilixtech.widget.countrycodepicker.CountryCodePicker
             android:id="@+id/ccp"
@@ -65,7 +65,7 @@
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:layout_margin="10dp"
-            android:background="@color/colorAccent"
+            android:background="#00B8D4"
             android:layout_below="@+id/btnOtp"
             />
 
