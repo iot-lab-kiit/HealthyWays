@@ -51,6 +51,7 @@
 
             </com.google.android.material.textfield.TextInputLayout>
          <Button
+             android:id="@+id/btnOtp"
              android:layout_width="match_parent"
              android:layout_height="55dp"
              android:text="send OTP"
@@ -59,6 +60,14 @@
              android:padding="10dp"
              android:backgroundTint="@color/colorAccent"
              android:textStyle="bold"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_margin="10dp"
+            android:background="@color/colorAccent"
+            android:layout_below="@+id/btnOtp"
+            />
 
     </RelativeLayout>
 
