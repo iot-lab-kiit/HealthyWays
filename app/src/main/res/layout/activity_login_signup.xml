@@ -62,6 +62,7 @@
              android:textStyle="bold"/>
 
         <View
+            android:id="@+id/view1"
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:layout_margin="10dp"
@@ -69,7 +70,36 @@
             android:layout_below="@+id/btnOtp"
             />
 
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_below="@+id/view1"
+            android:layout_centerHorizontal="true"
+            >
+
+            <ImageView
+                android:id="@+id/emailSignIn"
+                android:layout_width="52dp"
+                android:layout_height="52dp"
+                android:src="@drawable/ic_twotone_email_24"
+                android:padding="10dp"
+                android:layout_marginRight="5dp"
+                />
+            <ImageView
+                android:id="@+id/googleSignIn"
+                android:layout_width="52dp"
+                android:layout_height="52dp"
+                android:src="@drawable/ic_google"
+                android:padding="10dp"
+                android:layout_marginLeft="5dp"
+                />
+
+        </LinearLayout>
+
     </RelativeLayout>
+
+
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:layout_width="wrap_content"
