@@ -3,7 +3,76 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".loginSignup.LoginSignupActivity"
-    android:background="@drawable/gradient_background">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/gradient_background_login"
+    android:orientation="vertical"
+    >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/imgWork"
+            android:layout_width="match_parent"
+            android:layout_height="400dp"
+            android:src="@drawable/workout1" />
+
+        <com.rilixtech.widget.countrycodepicker.CountryCodePicker
+            android:id="@+id/ccp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginBottom="5dp"
+            android:layout_below="@+id/imgWork"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/mTxtPhone"
+                android:layout_marginLeft="25dp"
+                android:layout_marginRight="25dp"
+                style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.Dense"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ccp"
+                app:boxBackgroundColor="@color/white"
+                app:boxStrokeColor="@color/colorAccent"
+                android:orientation="horizontal"
+                >
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/edtPhone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Enter Phone number"
+                    android:textColorHint="@color/color_highlighted"
+                    android:inputType="numberDecimal"
+                    android:textSize="16sp" >
+                </androidx.appcompat.widget.AppCompatEditText>
+
+            </com.google.android.material.textfield.TextInputLayout>
+         <Button
+             android:layout_width="match_parent"
+             android:layout_height="55dp"
+             android:text="send OTP"
+             android:layout_below="@+id/mTxtPhone"
+             android:layout_margin="25dp"
+             android:padding="10dp"
+             android:backgroundTint="@color/colorAccent"
+             android:textStyle="bold"/>
+
+    </RelativeLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_forward"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:elevation="18dp"
+        android:layout_margin="18dp"
+        app:rippleColor="#FFFFFF"
+        android:backgroundTint="@color/gradientColor2"
+        android:onClick="openLoginIntent"
+        />
 
 </RelativeLayout>
