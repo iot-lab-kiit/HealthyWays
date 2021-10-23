@@ -1,31 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+android:background="@drawable/gradient_background_login"
+android:orientation="vertical"
+    >
+
+<RelativeLayout
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@drawable/gradient_background_login"
-    android:orientation="vertical"
-   >
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
 
-    <RelativeLayout
+    <ImageView
+        android:id="@+id/imgWork"
         android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:src="@drawable/workout1" />
+    <LinearLayout
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
-
-       <ImageView
-           android:id="@+id/imgWork"
-           android:layout_width="match_parent"
-           android:layout_height="400dp"
-           android:src="@drawable/workout1"
-           />
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_below="@+id/imgWork"
-            android:layout_centerHorizontal="true"
-            >
+        android:orientation="vertical"
+        android:layout_below="@+id/imgWork"
+        android:layout_centerHorizontal="true"
+        >
         <TextView
             android:id="@+id/note"
             android:layout_width="wrap_content"
@@ -51,21 +50,26 @@
             android:layout_centerHorizontal="true"
             />
 
-        </LinearLayout>
-
-    </RelativeLayout>
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/ic_forward"
-        android:layout_centerHorizontal="true"
-        android:layout_alignParentBottom="true"
-        android:elevation="18dp"
-        android:layout_margin="18dp"
-        app:rippleColor="#FFFFFF"
-        android:backgroundTint="@color/gradientColor2"
-        android:onClick="openLoginIntent"
-        />
+    </LinearLayout>
 
 </RelativeLayout>
+
+<com.google.android.material.floatingactionbutton.FloatingActionButton
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:src="@drawable/ic_forward"
+    android:layout_centerHorizontal="true"
+    android:layout_alignParentBottom="true"
+    android:elevation="18dp"
+    android:layout_margin="18dp"
+    app:rippleColor="#FFFFFF"
+    android:backgroundTint="@color/gradientColor2"
+    android:onClick="openLoginIntent"
+    />
+
+</RelativeLayout>
+
+
+
+
+

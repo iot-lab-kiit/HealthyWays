@@ -100,4 +100,6 @@ dependencies {
     })
     androidTestImplementation "androidx.test.ext:junit:$rootProject.androidxJunitVersion"
 
+    implementation 'com.github.joielechong:countrycodepicker:2.4.2'
+
 }
